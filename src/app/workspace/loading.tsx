@@ -10,5 +10,5 @@ export default function WorkspaceLoading() {
         <p className="text-sm text-muted-foreground">Loading workspace…</p>
       </div>
     </div>
-  )
+  );
 }

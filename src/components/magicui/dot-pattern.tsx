@@ -1,18 +1,18 @@
-"use client"
+'use client';
 
-import { useId } from "react"
-import { cn } from "@/lib/utils"
+import { useId } from 'react';
+import { cn } from '@/lib/utils';
 
 interface DotPatternProps {
-  width?: number
-  height?: number
-  x?: number
-  y?: number
-  cx?: number
-  cy?: number
-  cr?: number
-  className?: string
-  [key: string]: unknown
+  width?: number;
+  height?: number;
+  x?: number;
+  y?: number;
+  cx?: number;
+  cy?: number;
+  cr?: number;
+  className?: string;
+  [key: string]: unknown;
 }
 
 export function DotPattern({
@@ -26,13 +26,13 @@ export function DotPattern({
   className,
   ...props
 }: DotPatternProps) {
-  const id = useId()
+  const id = useId();
 
   return (
     <svg
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80",
+        'pointer-events-none absolute inset-0 h-full w-full fill-neutral-400/80',
         className
       )}
       {...props}
@@ -52,5 +52,5 @@ export function DotPattern({
       </defs>
       <rect width="100%" height="100%" strokeWidth={0} fill={`url(#${id})`} />
     </svg>
-  )
+  );
 }

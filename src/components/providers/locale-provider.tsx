@@ -1,12 +1,6 @@
-"use client"
+'use client';
 
-import {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useCallback,
-} from "react"
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import {
   type Locale,
   defaultLocale,
@@ -14,53 +8,48 @@ import {
   getStoredLocale,
   setStoredLocale,
   t as translate,
-} from "@/lib/i18n"
+} from '@/lib/i18n';
 
 type LocaleContextValue = {
-  locale: Locale
-  setLocale: (locale: Locale) => void
-}
+  locale: Locale;
+  setLocale: (locale: Locale) => void;
+};
 
-const LocaleContext = createContext<LocaleContextValue | null>(null)
+const LocaleContext = createContext<LocaleContextValue | null>(null);
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(defaultLocale)
-  const [mounted, setMounted] = useState(false)
+  const [locale, setLocaleState] = useState<Locale>(defaultLocale);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = getStoredLocale()
-    if (stored) setLocaleState(stored)
-    setMounted(true)
-  }, [])
+    const stored = getStoredLocale();
+    if (stored) setLocaleState(stored);
+    setMounted(true);
+  }, []);
 
   const setLocale = useCallback((newLocale: Locale) => {
-    setLocaleState(newLocale)
-    setStoredLocale(newLocale)
-  }, [])
+    setLocaleState(newLocale);
+    setStoredLocale(newLocale);
+  }, []);
 
   if (!mounted) {
-    return <>{children}</>
+    return <>{children}</>;
   }
 
-  return (
-    <LocaleContext.Provider value={{ locale, setLocale }}>
-      {children}
-    </LocaleContext.Provider>
-  )
+  return <LocaleContext.Provider value={{ locale, setLocale }}>{children}</LocaleContext.Provider>;
 }
 
 export function useLocale() {
-  const ctx = useContext(LocaleContext)
+  const ctx = useContext(LocaleContext);
   if (!ctx) {
     return {
       locale: defaultLocale,
       setLocale: () => {},
       t: (key: string, params?: Record<string, string>) => key,
-    }
+    };
   }
   return {
     ...ctx,
-    t: (key: string, params?: Record<string, string>) =>
-      translate(ctx.locale, key, params),
-  }
+    t: (key: string, params?: Record<string, string>) => translate(ctx.locale, key, params),
+  };
 }

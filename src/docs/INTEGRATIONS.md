@@ -7,16 +7,16 @@
 
 ## Where to store secrets
 
-| Location | Use | Committed? |
-|----------|-----|------------|
-| `.env.local` | Local development keys | **No** (in .gitignore) |
-| `.env.example` | Template showing variable names (no values) | **Yes** |
-| Vercel → Project Settings → Environment Variables | Production/Preview keys | N/A |
+| Location                                          | Use                                         | Committed?             |
+| ------------------------------------------------- | ------------------------------------------- | ---------------------- |
+| `.env.local`                                      | Local development keys                      | **No** (in .gitignore) |
+| `.env.example`                                    | Template showing variable names (no values) | **Yes**                |
+| Vercel → Project Settings → Environment Variables | Production/Preview keys                     | N/A                    |
 
 **Rule:** Never commit real API keys. Reference them server-side only:
 
 ```ts
-const apiKey = process.env.OPENAI_API_KEY
+const apiKey = process.env.OPENAI_API_KEY;
 ```
 
 ---

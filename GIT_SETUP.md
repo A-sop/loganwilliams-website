@@ -1,6 +1,7 @@
 # Git Setup Instructions
 
 ## ✅ Git Installation
+
 Git for Windows has been installed successfully (version 2.52.0).
 
 ## 🔧 Configuration Required
@@ -26,6 +27,7 @@ git init
 ## ✅ Verify .gitignore
 
 Your `.gitignore` file is already set up and includes:
+
 - ✅ `node_modules/` - Dependencies
 - ✅ `.next/` - Next.js build output
 - ✅ `.vercel` - Vercel deployment files

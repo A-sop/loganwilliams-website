@@ -1,6 +1,6 @@
 # Product Requirements Document
 
-## Executive Concierge Orchestration
+## Executive Concierge — Workspace
 
 **Status:** Active PRD – MVP with Roadmap
 
@@ -8,7 +8,7 @@
 
 ## 1) Product Vision
 
-Build an executive concierge and operational assistant that turns voice instructions, forwarded messages, and documents into structured client cases, obligations, and executed workflows. The system minimizes human oversight while preserving control by routing sensitive actions to a designated human assistant for approval.
+Build an executive concierge and operational assistant that turns voice instructions, forwarded messages, and documents into structured client matters, obligations, and executed workflows. The system minimizes human oversight while preserving control by routing sensitive actions to a designated human assistant for approval.
 
 The product functions as a **CRM + task manager + document intelligence system** for modern executives and concierge operators.
 
@@ -19,7 +19,7 @@ The product functions as a **CRM + task manager + document intelligence system**
 Enable an executive to delegate operational complexity to a system that:
 
 * captures instructions via **voice, messages, and documents**,
-* maintains a reliable, structured case database,
+* maintains a reliable, structured matter database,
 * drafts communications and prepares documents and forms,
 * and uses a **human assistant approval layer** for outbound communication and high-risk updates.
 
@@ -31,13 +31,13 @@ Enable an executive to delegate operational complexity to a system that:
 
 * Owns the account and subscription
 * Issues instructions (voice, forwarded messages, uploads)
-* Oversees cases and final outcomes
+* Oversees matters and final outcomes
 * Can act on behalf of their own clients
 
 ### 2. Assistant (Human Approver – Included)
 
 * Added by the Executive (name + email)
-* Has access to assigned cases and tasks
+* Has access to assigned matters and tasks
 * Reviews and approves:
 
   * outbound communications
@@ -67,13 +67,15 @@ Billing and subscription logic **is in scope** but may be minimal at MVP launch.
 * Users (Executive + Assistant)
 * Permissions
 
-### Case
+### Matter
 
-* Client
-* Service type (relocation, business setup, etc.)
+* Client (person or business)
+* Service type (relocation, business setup, property purchase, business acquisition, etc.)
 * Status/stage
 * Linked tasks, documents, messages
 * Approval rules
+
+> **Nomenclature:** A **matter** is a piece of work for a client—whether an individual (relocation, residence permit) or a business (business setup, acquisition). We use "matter" rather than "case" to reflect work with humans and businesses across varied engagements.
 
 ### Contact
 
@@ -87,7 +89,7 @@ Billing and subscription logic **is in scope** but may be minimal at MVP launch.
 * Due date
 * Priority
 * Status
-* Linked Case
+* Linked Matter
 
 ### Document
 
@@ -125,6 +127,8 @@ Billing and subscription logic **is in scope** but may be minimal at MVP launch.
 
 ### B) Document Ingestion & Intelligence
 
+Output language matches document language (see §J).
+
 * Supported formats:
 
   * PDF
@@ -153,9 +157,9 @@ Billing and subscription logic **is in scope** but may be minimal at MVP launch.
 * Searchable and attachable later
 * Original files preserved
 
-### E) Case Workspace (CRM)
+### E) Matter Workspace (CRM)
 
-* Single source of truth:
+* Single source of truth per matter:
 
   * Contacts
   * Documents
@@ -165,17 +169,19 @@ Billing and subscription logic **is in scope** but may be minimal at MVP launch.
 * Role-based visibility (Executive vs Assistant)
 * Accessible UI (keyboard, screen reader)
 
-### F) Task Orchestration
+### F) Workspace & Task Management
 
 * Tasks created from:
 
   * Voice
   * Messages
   * Documents
-* Global and case-specific task views
+* Global and matter-specific task views
 * Waiting-on tracking
 
 ### G) Communications & Letters (Approval Required)
+
+Drafted content follows the **input language** (see §J) — e.g. German input → German draft, formal Sie tone.
 
 #### Email
 
@@ -210,13 +216,36 @@ Billing and subscription logic **is in scope** but may be minimal at MVP launch.
 * Adequate contrast
 * Text-to-speech for summaries and drafts
 
+### J) Internationalization (i18n)
+
+#### Nomenclature (localised)
+
+| Concept        | English    | German     |
+|----------------|------------|------------|
+| Main workspace | Workspace  | Arbeitsbereich |
+| Client matter  | Matter     | Vorgang    |
+| Task list view | Tasks      | Aufgaben   |
+
+* **Required:** English and German UI
+* **Optional (roadmap):** Persian, Portuguese
+* Language toggle in the UI (user-selectable)
+* All user-facing strings localized
+* Locale persistence (e.g. localStorage)
+
+#### Language Policy — Input-Driven Output
+
+* **Primary language = input language.** The system’s output language follows the language of the source material.
+* If a document, message, or voice instruction is received in **German**, all related outputs (extractions, drafts, summaries, communications) are produced in **German**.
+* If the input is in **English**, outputs are in **English**.
+* **Tone:** Charming but formal. In German, always use the **Sie form** (formal “you”), not Du.
+
 ---
 
 ## 7) Permissions Model (MVP)
 
 | Action                 | Executive | Assistant         |
 | ---------------------- | --------- | ----------------- |
-| View cases             | Yes       | Assigned only     |
+| View matters           | Yes       | Assigned only     |
 | Upload documents       | Yes       | Yes               |
 | Edit candidate updates | Yes       | Yes               |
 | Approve updates        | Yes       | Yes               |
@@ -241,7 +270,7 @@ Billing and subscription logic **is in scope** but may be minimal at MVP launch.
 
 ## 9) Success Metrics (Initial)
 
-* Time from input → structured case/task
+* Time from input → structured matter/task
 * % of documents with approved extracted fields
 * Reduction in manual task creation
 * Approval turnaround time
@@ -259,7 +288,7 @@ Billing and subscription logic **is in scope** but may be minimal at MVP launch.
 * Expanded messaging ingestion
 * Automated follow-ups
 * Advanced workflow automation
-* Case templates by service type
+* Matter templates by service type
 
 UI should clearly mark these as **"Coming Soon"** to set expectations.
 
@@ -271,7 +300,7 @@ UI should clearly mark these as **"Coming Soon"** to set expectations.
 
 * Users & permissions
 * Intake (email, voice, forwarding)
-* Cases, tasks, documents
+* Matters, tasks, documents
 * OCR + extraction + approval
 * Drafting + approval-gated sending
 * DIN letter generation
@@ -299,12 +328,13 @@ UI should clearly mark these as **"Coming Soon"** to set expectations.
 * ✅ Add professional polish (spacing, typography, focus/hover states)
 * ✅ Improve accessibility (labels, roles, ARIA, keyboard navigation, skip link)
 * ✅ Verify responsive behavior and dark mode compatibility
+* ✅ Add internationalization (English, German) with language toggle
 
-### Stage 2 — Backend & Data (Not started)
+### Stage 2 — Backend & Data
 
-* Connect to database/API
-* Replace mock data with real data
-* Implement CRUD operations for cases, tasks, documents, contacts
+* ✅ Connect to data layer (JSON file at `src/data/task-orchestration.json`)
+* ✅ Replace mock data with real data from Server Action `getWorkspaceData`
+* ⬜ Implement CRUD operations for matters, tasks, documents (read-only for now)
 
 ### Stage 3 — Full Functionality (Not started)
 
@@ -314,4 +344,4 @@ UI should clearly mark these as **"Coming Soon"** to set expectations.
 
 ---
 
-**Stage 1 summary:** UI built at `/task-orchestration` using shadcn/ui components (Button, Card, Badge). Mock data lives in `src/lib/mock-data.ts`. Includes Cases list, Case workspace (Overview, Contacts, Documents, Tasks, Timeline), Tasks view with global/by-case filter, and Coming Soon section.
+**Stage 1 summary:** UI built at `/task-orchestration` using shadcn/ui components (Button, Card, Badge). Mock data lives in `src/lib/mock-data.ts`. Includes Matters list, Matter workspace (Overview, Contacts, Documents, Tasks, Timeline), Tasks view with global/by-matter filter, and Coming Soon section. i18n: English and German with language toggle (top-right); translations in `src/lib/i18n/translations.ts`.

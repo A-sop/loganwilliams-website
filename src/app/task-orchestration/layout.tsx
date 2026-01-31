@@ -1,9 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Task Orchestration | Executive Concierge",
+  title: "Workspace | Executive Concierge",
   description:
-    "Cases, tasks, and documents — Executive Concierge workspace for managing client cases and workflows.",
+    "Matters, tasks, and documents — Executive Concierge workspace for managing client matters and workflows.",
 }
 
 export default function TaskOrchestrationLayout({

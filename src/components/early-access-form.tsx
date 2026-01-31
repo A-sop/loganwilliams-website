@@ -1,16 +1,37 @@
 "use client"
 
-import { useActionState } from "react"
+import { useActionState, useState, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { submitEarlyAccess } from "@/app/actions/early-access"
 import { useLocale } from "@/components/providers/locale-provider"
+import { emailOnlySchema } from "@/lib/schemas/early-access"
 
 const initialState = null as { success: true; message: string } | { success: false; error: string } | null
 
 export function EarlyAccessForm() {
   const { locale, t } = useLocale()
   const [state, formAction, isPending] = useActionState(submitEarlyAccess, initialState)
+  const [email, setEmail] = useState("")
+  const [clientError, setClientError] = useState<string | null>(null)
+
+  const validateEmail = useCallback((value: string) => {
+    const result = emailOnlySchema.safeParse({ email: value })
+    if (result.success) {
+      setClientError(null)
+      return true
+    }
+    const err = result.error.errors[0]
+    setClientError(err?.message ?? "email_required")
+    return false
+  }, [])
+
+  const handleBlur = useCallback(() => {
+    if (email) validateEmail(email)
+  }, [email, validateEmail])
+
+  const isInvalid = !!clientError
+  const showError = state && !state.success ? state.error : clientError ? t(`validation.${clientError}`) : null
 
   return (
     <form action={formAction} className="space-y-4" noValidate>
@@ -26,12 +47,17 @@ export function EarlyAccessForm() {
           id="email"
           name="email"
           type="email"
+          value={email}
+          onChange={(e) => {
+            setEmail(e.target.value)
+            if (clientError) validateEmail(e.target.value)
+          }}
+          onBlur={handleBlur}
           placeholder={t("emailPlaceholder")}
-          required
           className="w-full"
           aria-label={t("emailAriaLabel")}
-          aria-describedby={state ? "form-feedback" : undefined}
-          aria-invalid={state && !state.success ? true : undefined}
+          aria-describedby="form-feedback"
+          aria-invalid={isInvalid || (state && !state.success) ? true : undefined}
           disabled={isPending}
         />
       </div>
@@ -41,15 +67,15 @@ export function EarlyAccessForm() {
             {state.message}
           </p>
         )}
-        {state && !state.success && (
-          <p className="text-sm font-medium text-destructive">{state.error}</p>
+        {showError && (
+          <p className="text-sm font-medium text-destructive">{showError}</p>
         )}
       </div>
       <Button
         type="submit"
         className="w-full"
         size="lg"
-        disabled={isPending}
+        disabled={isPending || !email.trim() || isInvalid}
         aria-busy={isPending}
       >
         {isPending ? t("submitting") : t("notifyMe")}

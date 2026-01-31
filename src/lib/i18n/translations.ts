@@ -46,6 +46,8 @@ export const translations = {
     validation: {
       email_required: "Email is required",
       email_invalid: "Please enter a valid email address",
+      email_too_long: "Email is too long",
+      locale_invalid: "Invalid language",
     },
     // Workspace (main area)
     openWorkspace: "Open Workspace",
@@ -135,6 +137,8 @@ export const translations = {
     validation: {
       email_required: "E-Mail ist erforderlich",
       email_invalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      email_too_long: "E-Mail ist zu lang",
+      locale_invalid: "Ungültige Sprache",
     },
     openWorkspace: "Arbeitsbereich öffnen",
     workspace: "Arbeitsbereich",

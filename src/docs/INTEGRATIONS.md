@@ -42,6 +42,13 @@ const apiKey = process.env.OPENAI_API_KEY
 
 ---
 
+## Validation & Security
+
+- **Zod** schemas at `src/lib/schemas/` — validate all form inputs (email, locale) on client and server
+- **Early access:** `earlyAccessSchema` enforces trim, min/max length (254), email format, allowed locales (en, de)
+- **Outputs:** No `dangerouslySetInnerHTML`; user content rendered as text (React escapes)
+- **Errors:** Validation failures return i18n keys; unexpected errors logged server-side only, generic message to user
+
 ## Planned (not yet wired)
 
 - n8n (workflows)

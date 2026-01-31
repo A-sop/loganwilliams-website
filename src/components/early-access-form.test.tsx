@@ -59,7 +59,7 @@ describe("EarlyAccessForm", () => {
     const user = userEvent.setup()
     renderWithLocale(<EarlyAccessForm />)
 
-    await user.type(screen.getByLabelText(/email address/i), "invalid")
+    await user.type(screen.getByLabelText(/email address/i), "test@example.com")
     await user.click(screen.getByRole("button", { name: /notify me when available/i }))
 
     await waitFor(() => {
@@ -67,18 +67,16 @@ describe("EarlyAccessForm", () => {
     })
   })
 
-  it("shows error for empty email", async () => {
-    vi.mocked(submitEarlyAccess).mockResolvedValue({
-      success: false,
-      error: "Email is required",
-    })
+  it("shows client-side error for invalid email and disables submit", async () => {
     const user = userEvent.setup()
     renderWithLocale(<EarlyAccessForm />)
 
-    await user.click(screen.getByRole("button", { name: /notify me when available/i }))
+    await user.type(screen.getByLabelText(/email address/i), "invalid")
+    await user.tab()
 
     await waitFor(() => {
-      expect(screen.getByText(/email is required/i)).toBeInTheDocument()
+      expect(screen.getByText(/please enter a valid email/i)).toBeInTheDocument()
     })
+    expect(screen.getByRole("button", { name: /notify me when available/i })).toBeDisabled()
   })
 })

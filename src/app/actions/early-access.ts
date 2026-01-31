@@ -1,38 +1,42 @@
 "use server"
 
-import { validateEmail } from "@/lib/validation"
+import { parseEarlyAccessFormData } from "@/lib/schemas/early-access"
 import { t } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n"
 
 export type EarlyAccessResult =
   | { success: true; message: string }
   | { success: false; error: string }
 
-const supportedLocales = ["en", "de"] as const
-
-/** Server action: submit early access email. No DB yet — simulates success. */
+/** Server action: submit early access email. Validates with Zod. */
 export async function submitEarlyAccess(
   _prevState: unknown,
   formData: FormData
 ): Promise<EarlyAccessResult> {
-  const email = (formData.get("email") as string) ?? ""
-  const localeRaw = (formData.get("locale") as string) ?? "en"
-  const locale: Locale =
-    supportedLocales.includes(localeRaw as Locale) ? (localeRaw as Locale) : "en"
+  try {
+    const parsed = parseEarlyAccessFormData(formData)
+    if (!parsed.success) {
+      const locale = ((formData.get("locale") as string) ?? "en").trim()
+      const safeLocale = locale === "de" ? "de" : "en"
+      return {
+        success: false,
+        error: t(safeLocale, `validation.${parsed.errorKey}`),
+      }
+    }
 
-  const validation = validateEmail(email)
-  if (!validation.valid) {
+    const { email, locale } = parsed.data
+
+    // Simulate async work; in future, persist to DB with parameterized query
+    await new Promise((r) => setTimeout(r, 500))
+
+    return {
+      success: true,
+      message: t(locale, "earlyAccessSuccess", { email }),
+    }
+  } catch (err) {
+    console.error("[submitEarlyAccess] Unexpected error:", err)
     return {
       success: false,
-      error: t(locale, `validation.${validation.errorKey}`),
+      error: "Something went wrong. Please try again.",
     }
-  }
-
-  // Simulate async work; in future, persist to DB
-  await new Promise((r) => setTimeout(r, 500))
-
-  return {
-    success: true,
-    message: t(locale, "earlyAccessSuccess", { email: email.trim() }),
   }
 }

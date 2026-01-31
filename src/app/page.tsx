@@ -34,7 +34,7 @@ export default function Home() {
           
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             <AnimatedGradientText className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
-              Stay Reliable, Compliant, and in Control
+              Tasks Under Control. You Stay in Control.
             </AnimatedGradientText>
           </h1>
           

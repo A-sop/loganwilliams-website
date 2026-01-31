@@ -233,11 +233,12 @@ export const mockTimeline: TimelineEvent[] = [
   },
 ]
 
-export const comingSoonItems = [
-  "Native mobile app",
-  "Additional assistants",
-  "Expanded messaging ingestion",
-  "Automated follow-ups",
-  "Advanced workflow automation",
-  "Case templates by service type",
-]
+/** Translation keys for coming soon items (use with t(key)) */
+export const comingSoonItemKeys = [
+  "comingSoonMobileApp",
+  "comingSoonAssistants",
+  "comingSoonMessaging",
+  "comingSoonFollowUps",
+  "comingSoonWorkflow",
+  "comingSoonTemplates",
+] as const

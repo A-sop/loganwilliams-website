@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, Fragment, useCallback, type KeyboardEvent } from 'react';
+import { useState, Fragment, useCallback, type KeyboardEvent, type FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,11 +8,29 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { useLocale } from '@/components/providers/locale-provider';
 import { cn } from '@/lib/utils';
-import { FolderOpen, ListTodo, FileText, Users, Clock, ChevronRight, ChevronUp, ChevronDown } from 'lucide-react';
+import { FolderOpen, ListTodo, FileText, Users, Clock, ChevronRight, ChevronUp, ChevronDown, Plus } from 'lucide-react';
 import type { WorkspaceData } from './actions';
+import { addTask } from './actions';
 import type { Case, Task, Document, Contact, TimelineEvent } from '@/lib/mock-data';
-import type { PlannedFeature, UserSuggestion, FeaturesData } from './feature-actions';
+import type { TaskStatus, TaskPriority } from '@/lib/mock-data';
+import type { PlannedFeature, FeaturesData } from './feature-actions';
 import { voteFeature, submitFeatureSuggestion } from './feature-actions';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 import { ApiTestCard } from './api-test-card';
 import { SupabaseTestCard } from './supabase-test-card';
 
@@ -211,7 +229,7 @@ function FeatureVoteRow({
   id: string;
   label: string;
   votes: number;
-  onVote: (id: string, delta: 1 | -1) => void;
+  onVote: (_id: string, _delta: 1 | -1) => void;
   disabled: boolean;
 }) {
   return (
@@ -264,6 +282,16 @@ export function WorkspaceClient({ initialData, initialFeatures, error }: Props) 
   const { assignments, tasks, documents, contacts, timeline } = initialData;
   const { plannedFeatures, userSuggestions } = initialFeatures;
 
+  const [addTaskOpen, setAddTaskOpen] = useState(false);
+  const [newTaskTitle, setNewTaskTitle] = useState('');
+  const [newTaskCaseId, setNewTaskCaseId] = useState<string | null>(null);
+  const [newTaskStatus, setNewTaskStatus] = useState<TaskStatus>('todo');
+  const [newTaskPriority, setNewTaskPriority] = useState<TaskPriority>('medium');
+  const [newTaskDueDate, setNewTaskDueDate] = useState('');
+  const [newTaskOwner, setNewTaskOwner] = useState('Assistant');
+  const [addTaskStatus, setAddTaskStatus] = useState<'idle' | 'loading' | 'error'>('idle');
+  const [addTaskError, setAddTaskError] = useState<string | null>(null);
+
   const handleVote = useCallback(
     async (featureId: string, delta: 1 | -1) => {
       setVotingId(featureId);
@@ -274,7 +302,7 @@ export function WorkspaceClient({ initialData, initialFeatures, error }: Props) 
     [router]
   );
 
-  const handleSubmitSuggestion = useCallback(async (e: React.FormEvent) => {
+  const handleSubmitSuggestion = useCallback(async (e: FormEvent) => {
     e.preventDefault();
     if (!suggestionText.trim()) return;
     setSuggestionStatus('loading');
@@ -289,6 +317,36 @@ export function WorkspaceClient({ initialData, initialFeatures, error }: Props) 
       setSuggestionStatus('error');
     }
   }, [suggestionText, router]);
+
+  const handleAddTask = useCallback(
+    async (e: FormEvent) => {
+      e.preventDefault();
+      const title = newTaskTitle.trim();
+      if (!title) return;
+      setAddTaskStatus('loading');
+      setAddTaskError(null);
+      const dueDate = newTaskDueDate || new Date().toISOString().slice(0, 10);
+      const result = await addTask({
+        title,
+        caseId: newTaskCaseId,
+        status: newTaskStatus,
+        priority: newTaskPriority,
+        dueDate,
+        owner: newTaskOwner.trim() || 'Assistant',
+      });
+      if (result.ok) {
+        setNewTaskTitle('');
+        setNewTaskDueDate('');
+        setAddTaskOpen(false);
+        setAddTaskStatus('idle');
+        router.refresh();
+      } else {
+        setAddTaskError(result.error);
+        setAddTaskStatus('error');
+      }
+    },
+    [newTaskTitle, newTaskCaseId, newTaskStatus, newTaskPriority, newTaskDueDate, newTaskOwner, router]
+  );
 
   const bySection = (section: PlannedFeature['section']) =>
     plannedFeatures.filter((f) => f.section === section);
@@ -660,6 +718,123 @@ export function WorkspaceClient({ initialData, initialFeatures, error }: Props) 
               >
                 {t('byAssignment')}
               </Button>
+              <Dialog open={addTaskOpen} onOpenChange={setAddTaskOpen}>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="sm" className="ml-2 gap-1.5">
+                    <Plus className="h-4 w-4" />
+                    {t('addTask')}
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="sm:max-w-md">
+                  <DialogHeader>
+                    <DialogTitle>{t('addTask')}</DialogTitle>
+                    <DialogDescription>{t('addTaskDescription')}</DialogDescription>
+                  </DialogHeader>
+                  <form onSubmit={handleAddTask} className="space-y-4">
+                    <div>
+                      <label htmlFor="new-task-title" className="mb-1.5 block text-sm font-medium">
+                        {t('task')}
+                      </label>
+                      <Input
+                        id="new-task-title"
+                        value={newTaskTitle}
+                        onChange={(e) => setNewTaskTitle(e.target.value)}
+                        placeholder={t('addTaskPlaceholder')}
+                        disabled={addTaskStatus === 'loading'}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="mb-1.5 block text-sm font-medium">
+                        {t('assignment')}
+                      </label>
+                      <Select
+                        value={newTaskCaseId ?? 'unassigned'}
+                        onValueChange={(v) => setNewTaskCaseId(v === 'unassigned' ? null : v)}
+                      >
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder={t('unassigned')} />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="unassigned">{t('unassigned')}</SelectItem>
+                          {assignments.map((c) => (
+                            <SelectItem key={c.id} value={c.id}>
+                              {c.client} — {c.serviceType}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="mb-1.5 block text-sm font-medium">{t('status')}</label>
+                        <Select
+                          value={newTaskStatus}
+                          onValueChange={(v) => setNewTaskStatus(v as TaskStatus)}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="todo">{t('statusTodo')}</SelectItem>
+                            <SelectItem value="in_progress">{t('statusInProgress')}</SelectItem>
+                            <SelectItem value="waiting">{t('statusWaiting')}</SelectItem>
+                            <SelectItem value="done">{t('statusDone')}</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div>
+                        <label className="mb-1.5 block text-sm font-medium">{t('priority')}</label>
+                        <Select
+                          value={newTaskPriority}
+                          onValueChange={(v) => setNewTaskPriority(v as TaskPriority)}
+                        >
+                          <SelectTrigger className="w-full">
+                            <SelectValue />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="low">{t('priorityLow')}</SelectItem>
+                            <SelectItem value="medium">{t('priorityMedium')}</SelectItem>
+                            <SelectItem value="high">{t('priorityHigh')}</SelectItem>
+                            <SelectItem value="urgent">{t('priorityUrgent')}</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-3">
+                      <div>
+                        <label className="mb-1.5 block text-sm font-medium">{t('due')}</label>
+                        <Input
+                          type="date"
+                          value={newTaskDueDate}
+                          onChange={(e) => setNewTaskDueDate(e.target.value)}
+                          disabled={addTaskStatus === 'loading'}
+                        />
+                      </div>
+                      <div>
+                        <label className="mb-1.5 block text-sm font-medium">{t('owner')}</label>
+                        <Input
+                          value={newTaskOwner}
+                          onChange={(e) => setNewTaskOwner(e.target.value)}
+                          placeholder="Assistant"
+                          disabled={addTaskStatus === 'loading'}
+                        />
+                      </div>
+                    </div>
+                    {addTaskError && (
+                      <p className="text-sm text-destructive">{addTaskError}</p>
+                    )}
+                    <DialogFooter showCloseButton={false} className="sm:justify-start">
+                      <Button
+                        type="submit"
+                        disabled={!newTaskTitle.trim() || addTaskStatus === 'loading'}
+                      >
+                        {addTaskStatus === 'loading' ? '…' : t('addTask')}
+                      </Button>
+                    </DialogFooter>
+                  </form>
+                </DialogContent>
+              </Dialog>
             </div>
 
             <Card>

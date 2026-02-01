@@ -1,4 +1,5 @@
 import { getWorkspaceData } from './actions';
+import { getFeaturesData, type FeaturesData } from './feature-actions';
 import { WorkspaceClient } from './workspace-client';
 import { comingSoonItemKeys } from '@/lib/mock-data';
 
@@ -20,5 +21,12 @@ export default async function WorkspacePage() {
     };
   }
 
-  return <WorkspaceClient initialData={data} error={error} />;
+  let features: FeaturesData = { plannedFeatures: [], userSuggestions: [] };
+  try {
+    features = await getFeaturesData();
+  } catch {
+    // Non-fatal
+  }
+
+  return <WorkspaceClient initialData={data} initialFeatures={features} error={error} />;
 }

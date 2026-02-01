@@ -1,8 +1,13 @@
 # Feature Planning
 
-**Chosen Next Feature:** Basic assignment CRUD (add + edit) — 250131
+**Chosen Next Feature:** Document Intake → Saved Task Suggestions — 260131
+
+- **Rationale:** High impact (solves manual, error-prone task extraction) vs medium effort (UI + OCR + OpenAI + Supabase; persistence already scaffolded). Chosen now because Supabase is wired and the concept defines a clear one-week slice.
+- **Concept:** [concept-document-intake.md](./concept-document-intake.md)
+- **Next:** Create `src/docs/document-intake-prd.md` and follow Level 2 (UI → real functionality → Zero Trust → debug → ship).
 
 ---
+
 
 ## 1. Must-Haves
 
@@ -35,6 +40,12 @@
 
 ---
 
+## Todos
+
+- [ ] **Feature voting in production** — Votes and user suggestions currently persist to `features.json`; Vercel’s filesystem is read-only, so they only work locally. Add a database (or external store) when available so voting/submissions work in production.
+
+---
+
 ## Proposed next feature (~1 week)
 
 **Option A — Persist early access emails**  
@@ -49,4 +60,4 @@ Choose one: **A** or **B**
 
 ---
 
-Updated: 250131
+Updated: 260201

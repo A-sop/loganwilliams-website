@@ -207,6 +207,40 @@ Shows linked project and local/remote status.
 
 ---
 
+## Troubleshooting: "Test Supabase" fails
+
+### Error mentions "authentication" or "Invalid API key" or "JWT"
+
+**Cause:** You're using the **publishable** (anon) key instead of the **secret** key.
+
+**Fix:**
+1. Dashboard → **Project Settings** (gear) → **API**
+2. Find **Secret key** (or **service_role**). Click **Reveal**.
+3. Copy the full key — format `sb_secret_...` or a long JWT.
+4. Put it in `.env.local` as `SUPABASE_SERVICE_ROLE_KEY=...`
+5. Restart dev server: stop `npm run dev`, then run it again.
+
+### Error: "Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY"
+
+**Fix:** Add both to `.env.local`. Restart the dev server (Next.js reads env only at startup).
+
+### Error: "relation \"uploads\" does not exist"
+
+**Fix:** Tables aren't created. Either run migrations (`npx supabase db push --linked`) or run the SQL from section 6 in Dashboard → SQL Editor.
+
+### Error: "new row violates row-level security"
+
+**Cause:** Using the publishable key (RLS applies). Use the **secret** key (bypasses RLS).
+
+### "Connect" in the Dashboard doesn't work
+
+The **Connect** button (top right) opens a modal with connection snippets. If it's blank or fails:
+- Refresh the page
+- Check you're in the correct project
+- Try **Project Settings → API** for keys and URL
+
+---
+
 ## References
 
 - [Supabase API Keys docs](https://supabase.com/docs/guides/api/api-keys)

@@ -53,9 +53,9 @@ max_client_conn = 100
 [db.migrations]
 # If disabled, migrations will be skipped during a db push or reset.
 enabled = true
-# Specifies an ordered list of schema files that describe your database.
-# Supports glob patterns relative to supabase directory: "./schemas/*.sql"
-schema_paths = []
+# Declarative schema: glob picks up new files ad hoc (prefix with 03_, 04_ etc for order)
+# https://supabase.com/docs/guides/local-development/declarative-database-schemas
+schema_paths = ["./schemas/*.sql"]
 
 [db.seed]
 # If enabled, seeds the database after migrations during a db reset.

@@ -48,6 +48,8 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 .env*.local
+secrets.local
+.secrets
 
 # vercel
 .vercel

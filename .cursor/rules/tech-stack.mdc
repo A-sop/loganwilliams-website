@@ -27,7 +27,7 @@ alwaysApply: true
 ## Data & Validation
 
 - **Zod** — Schemas in `src/lib/schemas/`. Validate at boundaries (forms, Server Actions, API routes).
-- **Supabase** — Server-only. Use `createSupabaseAdmin()` from `@/lib/supabase-server`. Never expose service role key to client.
+- **Supabase** — Server: `createSupabaseAdmin()` from `@/lib/supabase-server`. Client: `createSupabaseBrowserClient()` from `@/lib/supabase-client` (for Auth/Realtime). Never expose service role key to client.
 
 ## Server & API
 

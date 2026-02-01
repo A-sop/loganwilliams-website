@@ -54,12 +54,18 @@ const apiKey = process.env.OPENAI_API_KEY;
 ### Supabase
 
 - **Used for:** Document Intake persistence (uploads, task_suggestions). Pre-login session storage.
-- **Env keys:** `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (use `service_role` JWT or `sb_secret_...` format)
-- **Where used:** `src/lib/supabase-server.ts` (server-only), `src/app/workspace/supabase-actions.ts`
+- **Env keys (server):** `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
+- **Env keys (client):** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (optional; for Auth/Realtime)
+- **Server client:** `src/lib/supabase-server.ts` — `createSupabaseAdmin()` — use in Server Actions, API routes
+- **Browser client:** `src/lib/supabase-client.ts` — `createSupabaseBrowserClient()` — use in Client Components when needed
+- **Where used:** `src/app/workspace/supabase-actions.ts` (server), Dev test page
 - **Test:** Workspace → Developer tools → Dev test page → "Test Supabase"
 - **Setup guide:** [supabase-setup.md](./supabase-setup.md)
 
-> **Remember:** This app uses **server-only** Supabase access. We do NOT use `NEXT_PUBLIC_SUPABASE_*` — the browser never talks to Supabase directly. Use `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` only. Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` only when adding client-side Supabase (e.g. Auth).
+**Security:**
+- **Service role key** → Server only. Never expose. Bypasses RLS.
+- **Publishable key** → Safe for browser. Respects RLS. Use for Auth, Realtime, user-scoped data.
+- **Current usage:** Server-only for DB. Add `NEXT_PUBLIC_*` vars when adding client-side Auth/Realtime.
 
 ---
 
@@ -79,6 +85,9 @@ const apiKey = process.env.OPENAI_API_KEY;
 src/docs/INTEGRATIONS.md  — This file: setup guide and integration list
 src/docs/supabase-setup.md — Supabase project creation, keys, and verification
 src/lib/openai.ts         — OpenAI client (server-only)
+src/lib/supabase-server.ts — Supabase admin client (server-only)
+src/lib/supabase-client.ts — Supabase browser client (client components; needs NEXT_PUBLIC_*)
+src/app/workspace/supabase-actions.ts — testSupabaseConnection() server action
 src/app/workspace/actions.ts — testOpenAI() server action
 src/app/workspace/api-test-card.tsx — UI to trigger API test (Workspace page, bottom)
 ```

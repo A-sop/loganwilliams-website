@@ -137,6 +137,7 @@ export const translations = {
     priorityMedium: 'Medium',
     priorityHigh: 'High',
     priorityUrgent: 'Urgent',
+    sops: 'SOPs',
   },
   de: {
     comingSoon: 'Demnächst',
@@ -267,7 +268,7 @@ export const translations = {
     priorityMedium: 'Mittel',
     priorityHigh: 'Hoch',
     priorityUrgent: 'Dringend',
-    sops: 'Arbeitsanweisungen',
+    sops: 'SOPs',
   },
 } as const satisfies Record<Locale, Record<string, string | Record<string, string>>>;
 

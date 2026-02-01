@@ -411,16 +411,11 @@ export function WorkspaceClient({ initialData, initialFeatures, error }: Props) 
 
       <header className="border-b border-border bg-card shadow-sm">
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-                {t('workspace')}
-              </h1>
-              <p className="mt-1 text-base text-muted-foreground sm:text-lg">{t('workspaceDesc')}</p>
-            </div>
-            <Button variant="outline" size="sm" asChild>
-              <Link href="/sops">{t('sops')}</Link>
-            </Button>
+          <div>
+            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              {t('workspace')}
+            </h1>
+            <p className="mt-1 text-base text-muted-foreground sm:text-lg">{t('workspaceDesc')}</p>
           </div>
 
           <nav
@@ -431,23 +426,29 @@ export function WorkspaceClient({ initialData, initialFeatures, error }: Props) 
           >
             <div className="flex flex-wrap gap-2">
               {MAIN_TABS.map((tab) => (
-                <Button
-                  key={tab.id}
-                  id={mainTabId(tab.id)}
-                  variant={mainTab === tab.id ? 'default' : 'outline'}
-                  size="sm"
-                  role="tab"
-                  aria-selected={mainTab === tab.id}
-                  aria-controls={mainPanelId(tab.id)}
-                  tabIndex={mainTab === tab.id ? 0 : -1}
-                  onClick={() => {
-                    setMainTab(tab.id);
-                    if (tab.id !== 'assignments') setSelectedCase(null);
-                  }}
-                  className="transition-colors duration-150"
-                >
-                  {t(tab.labelKey)}
-                </Button>
+                <Fragment key={tab.id}>
+                  {tab.id === 'coming-soon' && (
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href="/sops">{t('sops')}</Link>
+                    </Button>
+                  )}
+                  <Button
+                    id={mainTabId(tab.id)}
+                    variant={mainTab === tab.id ? 'default' : 'outline'}
+                    size="sm"
+                    role="tab"
+                    aria-selected={mainTab === tab.id}
+                    aria-controls={mainPanelId(tab.id)}
+                    tabIndex={mainTab === tab.id ? 0 : -1}
+                    onClick={() => {
+                      setMainTab(tab.id);
+                      if (tab.id !== 'assignments') setSelectedCase(null);
+                    }}
+                    className="transition-colors duration-150"
+                  >
+                    {t(tab.labelKey)}
+                  </Button>
+                </Fragment>
               ))}
             </div>
           </nav>

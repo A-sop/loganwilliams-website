@@ -1,5 +1,13 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs';
 import './globals.css';
 import { LocaleProvider } from '@/components/providers/locale-provider';
 import { LanguageToggle } from '@/components/language-toggle';
@@ -15,15 +23,33 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
-        <LocaleProvider>
-          <div className="fixed right-4 top-4 z-50">
-            <LanguageToggle />
-          </div>
-          {children}
-        </LocaleProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className="antialiased">
+          <LocaleProvider>
+            <header className="flex justify-end items-center p-4 gap-4 h-16">
+              <SignedOut>
+                <SignInButton />
+                <SignUpButton>
+                  <button
+                    type="button"
+                    className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer"
+                  >
+                    Sign Up
+                  </button>
+                </SignUpButton>
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+              <div className="ml-2">
+                <LanguageToggle />
+              </div>
+            </header>
+            {children}
+          </LocaleProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

@@ -11,6 +11,7 @@ import {
 import './globals.css';
 import { LocaleProvider } from '@/components/providers/locale-provider';
 import { LanguageToggle } from '@/components/language-toggle';
+import { FeedbackModalProvider, FeedbackModalTrigger } from '@/components/feedback-modal';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -27,26 +28,29 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body className="antialiased">
           <LocaleProvider>
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton>
-                  <button
-                    type="button"
-                    className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer"
-                  >
-                    Sign Up
-                  </button>
-                </SignUpButton>
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-              <div className="ml-2">
-                <LanguageToggle />
-              </div>
-            </header>
-            {children}
+            <FeedbackModalProvider>
+              <header className="flex justify-end items-center p-4 gap-4 h-16 flex-wrap">
+                <SignedOut>
+                  <SignInButton />
+                  <SignUpButton>
+                    <button
+                      type="button"
+                      className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer"
+                    >
+                      Sign Up
+                    </button>
+                  </SignUpButton>
+                </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
+                <div className="ml-2 flex items-center gap-4">
+                  <FeedbackModalTrigger />
+                  <LanguageToggle />
+                </div>
+              </header>
+              {children}
+            </FeedbackModalProvider>
           </LocaleProvider>
         </body>
       </html>

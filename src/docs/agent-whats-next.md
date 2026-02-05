@@ -4,16 +4,11 @@ Use this file to orient AI agents on current priorities and open tasks.
 
 ## Current focus
 
-**Auth & onboarding (PirateSkills Lesson 4.4)** — Continue with Stage 5: Database Setup and RLS.
+**Level 5.1 User Feedback** — Feedback modal is built; human: test in browser (see Level 5 human to-dos).
 
-## Open tasks (track these)
+## Human dev to-dos
 
-| Task | Location | Notes |
-|------|----------|-------|
-| Fix onboarding completion loop | `auth-flow-prd.md` → Known issues | After Get Started/Skip, user may loop onboarding ↔ workspace. JWT/metadata timing. |
-| Stage 5: Clerk + Supabase RLS | `auth-flow-prd.md` | Done: `supabase-clerk.ts`, tasks migration. Remaining: run migration, test RLS (User A vs User B) |
-| Stage 6: Testing and polish | `auth-flow-prd.md` | Full auth flow testing, error states, mobile |
-| Stage 7: Documentation and commit | `auth-flow-prd.md` | Update PRD, commit, Linear |
+**Single file:** `src/docs/human-todos.md` — Auth (4.5, 4.6), Level 5, loose ends.
 
 ## Linear
 
@@ -25,6 +20,9 @@ Use **average productivity** for new estimates. See `private/cost-estimate-refer
 
 ## Key docs
 
+- `CHAT-PRIMER.md` (project root) — New chat / "I'm back" / "I'm done for the day"
+- `src/docs/PROJECT-VALUE.md` — Total project value (German/European average Arbeiterbelastung; rate in `private/cost-estimate-reference.md`, €52/hr), optional value log
+- `src/docs/human-todos.md` — All human dev to-dos (one file)
 - `src/docs/auth-flow/auth-flow-prd.md` — Auth implementation plan
 - `src/docs/workspace-prd.md` — Workspace feature
 - `GIT-WORKFLOW.md` — Branching, commits, PRs

@@ -2,10 +2,12 @@
 
 ## Status
 
-**Stages 1–5 implementation complete.** Stage 5 manual steps (run migration, test RLS) and Stages 6–7 pending.
+**Shipped to Production.** Stages 1–7 complete.
+
+**Production:** https://cm.logans.tools (live as of Feb 2025). Auth (email/password), onboarding, RLS, feedback modal, and webhook integration deployed from `main`.
 
 **Lesson 4.4 checklist:**  
-✅ Stage 1 Clerk + Supabase setup · ✅ Stage 2 Auth pages & UserButton · ✅ Stage 3 Protected routes (proxy) · ✅ Stage 4 3-screen onboarding · ✅ Stage 5 Database & RLS (code + migration; run migration & test) · ⬜ Stage 6 Testing & polish · ⬜ Stage 7 Documentation & commit
+✅ Stage 1 Clerk + Supabase setup · ✅ Stage 2 Auth pages & UserButton · ✅ Stage 3 Protected routes (proxy) · ✅ Stage 4 3-screen onboarding · ✅ Stage 5 Database & RLS · ✅ Stage 6 Testing & polish · ✅ Stage 7 Documentation & commit (merged to main, production verified)
 
 ### Known issues / open tasks
 

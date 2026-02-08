@@ -16,9 +16,11 @@ export async function submitFeedback(
   formData: FormData
 ): Promise<SubmitFeedbackResult> {
   try {
-    // Validate form data
-    const message = formData.get('message')?.toString().trim();
-    const validation = feedbackSchema.safeParse({ description: message });
+    // Validate form data (accept 'description' from form or 'message' for backwards compatibility)
+    const raw =
+      formData.get('description')?.toString().trim() ??
+      formData.get('message')?.toString().trim();
+    const validation = feedbackSchema.safeParse({ description: raw });
     if (!validation.success) {
       const error = validation.error.errors[0]?.message ?? 'Invalid feedback';
       return { success: false, error };
@@ -71,6 +73,10 @@ export async function submitFeedback(
       };
     }
 
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[submitFeedback] Calling n8n webhook (URL is set)');
+    }
+
     // Call n8n webhook with timeout
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
@@ -86,6 +92,10 @@ export async function submitFeedback(
       });
 
       clearTimeout(timeoutId);
+
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[submitFeedback] n8n response', response.status, response.statusText);
+      }
 
       if (!response.ok) {
         console.error(

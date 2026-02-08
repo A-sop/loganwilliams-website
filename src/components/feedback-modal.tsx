@@ -31,6 +31,7 @@ function useFeedbackModal() {
 function FeedbackFormContent() {
   const { setOpen } = useFeedbackModal();
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const {
     register,
     handleSubmit,
@@ -43,12 +44,25 @@ function FeedbackFormContent() {
 
   const onSubmit = async (data: FeedbackFormData) => {
     setStatus('loading');
-    console.log('[Feedback]', data);
-    setStatus('success');
-    reset();
-    setTimeout(() => {
-      setOpen(false);
-    }, 2000);
+    setSubmitError(null);
+    const formData = new FormData();
+    formData.set('description', data.description);
+    try {
+      const result = await submitFeedback(formData);
+      if (result.success) {
+        setStatus('success');
+        reset();
+        setTimeout(() => setOpen(false), 2000);
+      } else {
+        setStatus('idle');
+        setSubmitError(result.error ?? 'Failed to send feedback.');
+      }
+    } catch (err) {
+      setStatus('idle');
+      setSubmitError(
+        err instanceof Error ? err.message : 'Something went wrong. Please try again.'
+      );
+    }
   };
 
   if (status === 'success') {
@@ -82,6 +96,11 @@ function FeedbackFormContent() {
         {errors.description && (
           <p id="feedback-description-error" className="text-sm text-destructive">
             {errors.description.message}
+          </p>
+        )}
+        {submitError && (
+          <p className="text-sm text-destructive" role="alert">
+            {submitError}
           </p>
         )}
       </div>

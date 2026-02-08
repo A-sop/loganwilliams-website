@@ -10,6 +10,8 @@ Use this for new Composer/Chat sessions and when you say "I'm back" or "I'm done
 
 **What's done:** Clerk sign-in/sign-up, 3-screen onboarding, proxy protection, Clerk+Supabase RLS (tasks table, "My tasks" on workspace). Feedback modal on `user-feedback` branch (Give Feedback in header).
 
+**Process:** This repo is the leading environment. For non-trivial work (new workflows, integrations, features), confirm scope and approach with the user first; develop together. See `.cursor/rules/leading-environment.mdc`.
+
 **Key docs:**
 - `src/docs/human-todos.md` — All human to-dos (auth, deploy, feedback)
 - `src/docs/auth-flow/auth-flow-prd.md` — Auth plan

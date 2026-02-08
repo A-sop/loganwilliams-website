@@ -108,6 +108,8 @@ After setting up Clerk ↔ Supabase (Clerk Dashboard → Supabase → Activate; 
 - [ ] **RLS “My tasks”:** If you use the Supabase “My tasks” card, apply migration `20260205120000_clerk_tasks_rls.sql` (see Pre-production checklist).
 - [ ] **Onboarding loop:** We added a 300ms delay after JWT refresh; if you still see redirect loops, revisit (PRD known issues).
 - [ ] **Linear:** If you use Linear, update sprint/board when auth is shipped (PRD Stage 7).
+- [ ] **Google sign-up:** Enable "Sign in with Google" in Clerk. Clerk Dashboard → Social connections → Google (use custom credentials) → copy redirect URI → Google Cloud Console → OAuth client → add that exact redirect URI → paste Client ID and Secret back into Clerk. See `src/docs/google-sign-in-setup.md`. Fix `redirect_uri_mismatch` by ensuring the URI in Google matches Clerk's character-for-character (no trailing slash unless Clerk shows one).
+- [ ] **Implement Linear:** Set up Linear (workspace, team, project), connect to GitHub if desired, and create issues for open loops from this doc so tasks are tracked in Linear. Optionally link commits with issue IDs (e.g. `Fixes A-XX`). See `GIT-WORKFLOW.md` and `src/docs/agent-whats-next.md`.
 
 ---
 

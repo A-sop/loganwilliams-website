@@ -24,8 +24,8 @@ export async function createSupabaseClientForClerk() {
   const { getToken } = await auth();
   return createClient(url, anonKey, {
     accessToken: async () => {
-      // Fresh token so Supabase integration claims are present; skipCache avoids stale JWT
-      const token = await getToken({ skipCache: true });
+      // Session token (use Clerk Supabase template if you need custom claims)
+      const token = await getToken();
       if (process.env.NODE_ENV === 'development' && token) {
         try {
           const payload = JSON.parse(

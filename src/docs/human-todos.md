@@ -1,6 +1,19 @@
 # Human dev to-dos
 
-**Single reference for all human tasks.** Auth (4.5, 4.6), Level 5, and loose ends.
+**⚠️ DEPRECATED: This document has been migrated to Linear.** All tasks have been converted to Linear issues. This file is kept for reference only and will be removed once migration is verified complete.
+
+**Migration Status:** ✅ Complete (2026-02-09)
+- All tasks from this document have been created as Linear issues
+- Reference sections preserved below for context
+- See Linear workspace for active task tracking
+
+**Linear Issues Created:**
+- A-12: Security Verification (4.5)
+- A-13: Production Deployment (4.6)
+- A-14 to A-25: Level 5 tasks (Feedback System)
+- A-26 to A-63: Level 6 tasks (Payment System)
+- A-64: Future Features (Document Generation Tool)
+- A-65: Quick Test (Clerk + Supabase)
 
 ---
 

@@ -53,29 +53,153 @@ Charging from day one validates real demand. If someone pays for your product, y
 
 ## 2. Estimated Customer Value & Value-Based Price Range
 
-**Note:** [LDW] — Requires human input to estimate customer value based on:
-- Alternative solutions and their cost
-- Time saved per month (hours) and typical hourly rate
-- Risk / opportunity cost avoided
+### 2.1 Assumptions for a Typical CM Operator
 
-**Placeholder Calculations:**
-- Customer value estimation: TBD
-- Value-based price range: TBD (target: 5-20% of value created)
+These numbers are **conservative ballpark figures** for one Consulting & More operator (like our blind executive), handling German bureaucracy for multiple clients.
+
+- **Rates**
+  - Executive effective rate: **€120/h**
+  - Assistant fully loaded rate: **€30/h**
+
+- **Monthly inefficiencies today**
+  - Executive time lost to coordination, searching for information, re‑explaining context: **~6 h/month**
+  - Assistant time lost to hunting for documents, redoing work, miscommunication: **~15 h/month**
+
+- **Risk / friction**
+  - Near‑misses or actual missed obligations (child benefit, insurance, tax, payroll, etc.) create extra firefighting, discounts, or goodwill costs.
+  - Conservatively: **€600 per quarter** in “firefighting cost” → **~€200/month** averaged.
+
+### 2.2 Estimated Monthly Value Created
+
+**Labour waste per month (pre‑CM):**
+
+- Executive: 6 h × €120/h = **€720**
+- Assistants: 15 h × €30/h = **€450**
+- **Total labour waste:** **€1,170/month**
+
+**Risk / friction cost (pre‑CM):**
+
+- ≈ **€200/month**
+
+**Total addressable value per month (conservative):**
+
+- **€1,170 + €200 ≈ €1,300/month**
+
+Now assume CM, once properly adopted, recovers only **25–40%** of that value:
+
+- 25% of €1,300 ≈ **€325/month**
+- 40% of €1,300 ≈ **€520/month**
+
+So a reasonable **value band** per operator setup is:
+
+- **Estimated monthly value created:** **€325–520/month**
+
+### 2.3 Price Range from Value Capture
+
+If we target capturing **10–20%** of the value we create:
+
+- 10% of €325–520 → **€32–52/month**
+- 20% of €325–520 → **€65–104/month**
+
+Given:
+
+- Niche B2B, high‑consequence work (bureaucracy, deadlines, compliance).
+- Strong fit for visually impaired operators who coordinate many partners.
+- Real savings in both **time** and **stress / firefighting**.
+
+We anchor the **main operator tier** approximately here:
+
+- **Initial value‑based price range (main CM operator tier):**  
+  **€79–99 / month per operator (including 1 assistant account)**
+
+This range:
+
+- Sits comfortably **inside** the €325–520/month value band.
+- Leaves room below for a lighter “starter” tier and above for team / enterprise.
+- Can be tightened later once we have more real client data.
 
 ---
 
 ## 3. Pricing Tiers
 
-**Note:** [LDW] — Requires human input to define:
-- Tier names (e.g., Starter, Pro, Executive)
-- Monthly USD prices for each tier
-- Feature mapping to tiers
-- Target user for each tier
+We start with **2 concrete tiers** designed around the main operator value range (~€79–99/month) and leave room for a future team/firms tier.
 
-**Placeholder Structure:**
-- **Tier 1 (Starter):** TBD price — Core features for single executive/small operator
-- **Tier 2 (Pro):** TBD price — Power features, advanced workflow, deeper automation
-- **Tier 3 (Enterprise/Team):** TBD price — Multi-user, higher limits, priority support, compliance
+### 3.1 Tier Overview
+
+1. **CM Operator** (Main tier)  
+   - **Price target:** **€89 / month** (initial target within the €79–99 band)  
+   - **Who it’s for:**  
+     - A single CM operator (like our blind executive) handling bureaucracy for multiple client households.  
+     - Includes **1 assistant seat** who can work inside the system.
+   - **Core promise:** Centralize obligations, documents, and workflows so *any* assistant can reliably execute, even if the operator is away.
+
+2. **CM Team** (Future – not required for MVP)  
+   - **Price rough target:** **€179–199 / month**  
+   - **Who it’s for:**  
+     - Small teams (2–3 operators) with multiple assistants and higher document volume.  
+   - **Status:** Documented as a **roadmap tier**; we won’t block MVP on implementing it, but design now so the pricing story is coherent.
+
+> For MVP, we only need to implement billing for **CM Operator**. CM Team stays as a visible “Coming soon” / “Contact us” anchor if we choose to show it.
+
+### 3.2 CM Operator – Details
+
+**Price:** **€89 / month** (single billing entity; includes 1 operator + 1 assistant seat).
+
+**Key features (initial scope):**
+
+- **Workspace & Assignments**
+  - Create and manage assignments (cases / Aufträge) per client or household.
+  - Track obligations, deadlines, and statuses across all partners (insurance, Elterngeld, banks, payroll, tax).
+  - Link tasks, documents, and notes to each assignment.
+
+- **Document Intake & Organization**
+  - Ingest and categorize incoming documents (PDFs, images, letters).
+  - Attach documents to assignments and tasks.
+  - Make it easy for any assistant to find “the right letter” quickly.
+
+- **Task & Workflow Support**
+  - Create tasks for yourself and assistants.
+  - Basic workflows for recurring obligations (monthly payroll, quarterly tax, renewals).
+  - Clear ownership and due dates so things don’t get lost.
+
+- **Accessibility & Assistant Collaboration**
+  - Interface suitable for screen‑reader workflows (where possible within MVP).
+  - 1 assistant seat included: assistants can log in and execute tasks against the shared system.
+
+**Value alignment with Section 2:**
+
+- Operator value band: **€325–520/month** saved/created.
+- Captured value at €89/month ≈ **17–27%** of the lower bound (325), and **~17%** of the mid‑band (~520), which is well within the 10–20% capture goal.
+
+### 3.3 CM Team – Outline (Roadmap)
+
+**Price (tentative):** **€179–199 / month**
+
+**Who it’s for:**
+
+- Offices with **2–3 operators** and multiple assistants.
+- Needs:
+  - More assignments and document throughput.
+  - Better separation of responsibilities.
+  - Shared templates and workflows across operators.
+
+**Feature deltas vs. CM Operator (conceptual):**
+
+- Higher limits on:
+  - Active assignments.
+  - Stored documents.
+  - Connected clients/households.
+- Additional seats:
+  - Up to 3 operators.
+  - More assistant seats.
+- Team‑level features (later):
+  - Shared templates and workflows.
+  - Simple reporting across operators.
+
+> We do **not** need to fully specify limits yet. For now, it is enough that:  
+> - CM Operator is clearly “single‑operator + 1 assistant”.  
+> - CM Team is “multiple operators + more assistants and volume”, at ~2× Operator price.  
+> Detailed limits can be tuned once we have real usage data.
 
 ---
 

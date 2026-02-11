@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import Link from 'next/link';
 import {
   ClerkProvider,
   SignInButton,
@@ -29,24 +30,41 @@ export default function RootLayout({
         <body className="antialiased">
           <LocaleProvider>
             <FeedbackModalProvider>
-              <header className="flex justify-end items-center p-4 gap-4 h-16 flex-wrap">
-                <SignedOut>
-                  <SignInButton />
-                  <SignUpButton>
-                    <button
-                      type="button"
-                      className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer"
-                    >
-                      Sign Up
-                    </button>
-                  </SignUpButton>
-                </SignedOut>
-                <SignedIn>
-                  <UserButton />
-                </SignedIn>
-                <div className="ml-2 flex items-center gap-4">
-                  <FeedbackModalTrigger />
-                  <LanguageToggle />
+              <header className="flex h-16 flex-wrap items-center justify-between gap-4 p-4">
+                <div className="flex items-center gap-4">
+                  <Link
+                    href="/"
+                    className="text-base font-semibold tracking-tight text-foreground transition-colors hover:text-foreground/90"
+                    aria-label="Consulting & More workspace home"
+                  >
+                    Consulting &amp; More
+                  </Link>
+                  <Link
+                    href="/pricing"
+                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    Pricing
+                  </Link>
+                </div>
+                <div className="flex items-center gap-4">
+                  <SignedOut>
+                    <SignInButton />
+                    <SignUpButton>
+                      <button
+                        type="button"
+                        className="bg-[#6c47ff] text-white rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer"
+                      >
+                        Sign Up
+                      </button>
+                    </SignUpButton>
+                  </SignedOut>
+                  <SignedIn>
+                    <UserButton />
+                  </SignedIn>
+                  <div className="ml-2 flex items-center gap-4">
+                    <FeedbackModalTrigger />
+                    <LanguageToggle />
+                  </div>
                 </div>
               </header>
               {children}

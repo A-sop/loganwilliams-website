@@ -5,12 +5,8 @@ import { ArrowLeft } from 'lucide-react';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ApiTestCard } from '@/app/workspace/api-test-card';
-import { SupabaseTestCard } from '@/app/workspace/supabase-test-card';
-
 /**
- * Dev test page: design system components and integration tests.
- * Linked from Workspace → Developer Tools.
+ * Dev test page: design system components.
  */
 export default function DevTestPage() {
   return (
@@ -18,7 +14,7 @@ export default function DevTestPage() {
       <div className="mx-auto max-w-2xl space-y-8">
         <div className="flex items-center gap-4">
           <Button variant="ghost" size="icon" asChild>
-            <Link href="/workspace" aria-label="Back to Workspace">
+            <Link href="/" aria-label="Back to Home">
               <ArrowLeft className="h-5 w-5" />
             </Link>
           </Button>
@@ -47,17 +43,9 @@ export default function DevTestPage() {
           </Card>
         </section>
 
-        <section className="space-y-4">
-          <h2 className="text-lg font-semibold">Integration Tests</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <ApiTestCard />
-            <SupabaseTestCard />
-          </div>
-        </section>
-
         <p className="text-center text-sm text-muted-foreground">
-          <Link href="/workspace" className="underline hover:text-foreground">
-            ← Back to Workspace
+          <Link href="/" className="underline hover:text-foreground">
+            ← Back to Home
           </Link>
         </p>
       </div>

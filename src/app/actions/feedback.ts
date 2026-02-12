@@ -1,6 +1,5 @@
 'use server';
 
-import { auth, clerkClient } from '@clerk/nextjs/server';
 import { headers } from 'next/headers';
 import { feedbackSchema } from '@/lib/schemas/feedback';
 
@@ -10,13 +9,12 @@ export type SubmitFeedbackResult =
 
 /**
  * Server Action: Submit feedback to n8n webhook.
- * Extracts user info from Clerk, collects request metadata, and sends to n8n.
+ * Anonymous feedback only (no auth for MVP).
  */
 export async function submitFeedback(
   formData: FormData
 ): Promise<SubmitFeedbackResult> {
   try {
-    // Validate form data (accept 'description' from form or 'message' for backwards compatibility)
     const raw =
       formData.get('description')?.toString().trim() ??
       formData.get('message')?.toString().trim();
@@ -26,44 +24,21 @@ export async function submitFeedback(
       return { success: false, error };
     }
 
-    // Get user info from Clerk (optional - feedback works for unauthenticated users)
-    const { userId } = await auth();
-    let firstName = 'Anonymous';
-    let lastName = '';
-    let email: string | undefined;
-
-    if (userId) {
-      try {
-        const client = await clerkClient();
-        const user = await client.users.getUser(userId);
-        firstName = user.firstName ?? firstName;
-        lastName = user.lastName ?? lastName;
-        email = user.emailAddresses[0]?.emailAddress;
-      } catch (err) {
-        console.warn('[submitFeedback] Failed to fetch user details:', err);
-        // Continue with anonymous feedback
-      }
-    }
-
-    // Get request metadata
     const headersList = await headers();
     const browser = headersList.get('user-agent') ?? undefined;
     const referer = headersList.get('referer') ?? undefined;
     const timestamp = new Date().toISOString();
 
-    // Construct payload for n8n webhook
     const payload = {
-      userId: userId ?? undefined,
-      firstName,
-      lastName,
-      email,
+      firstName: 'Anonymous',
+      lastName: '',
+      email: undefined as string | undefined,
       message: validation.data.description,
       browser,
       timestamp,
       url: referer,
     };
 
-    // Get n8n webhook URL from environment
     const webhookUrl = process.env.N8N_FEEDBACK_WEBHOOK_URL;
     if (!webhookUrl) {
       console.error('[submitFeedback] N8N_FEEDBACK_WEBHOOK_URL not configured');
@@ -73,36 +48,20 @@ export async function submitFeedback(
       };
     }
 
-    if (process.env.NODE_ENV === 'development') {
-      console.log('[submitFeedback] Calling n8n webhook (URL is set)');
-    }
-
-    // Call n8n webhook with timeout
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
 
     try {
       const response = await fetch(webhookUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
         signal: controller.signal,
       });
 
       clearTimeout(timeoutId);
 
-      if (process.env.NODE_ENV === 'development') {
-        console.log('[submitFeedback] n8n response', response.status, response.statusText);
-      }
-
       if (!response.ok) {
-        console.error(
-          '[submitFeedback] n8n webhook error:',
-          response.status,
-          response.statusText
-        );
         return {
           success: false,
           error: 'Failed to send feedback. Please try again.',
@@ -116,7 +75,6 @@ export async function submitFeedback(
     } catch (err) {
       clearTimeout(timeoutId);
       if (err instanceof Error && err.name === 'AbortError') {
-        console.error('[submitFeedback] Request timeout');
         return {
           success: false,
           error: 'Request timed out. Please try again.',

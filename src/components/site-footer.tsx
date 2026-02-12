@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export function SiteFooter() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="border-t border-border mt-auto">
       <div className="mx-auto max-w-6xl px-4 py-8">
@@ -34,8 +36,17 @@ export function SiteFooter() {
           >
             LinkedIn
           </a>
-          {/* Instagram, Facebook, X — see src/data/social-links.ts when needed */}
         </div>
+        <p className="mt-6 text-xs text-muted-foreground">
+          © {currentYear} Logan Williams. All rights reserved.
+          {' · '}
+          <Link
+            href="/legal#impressum"
+            className="text-primary underline underline-offset-2 hover:text-primary/90 transition-colors"
+          >
+            Impressum
+          </Link>
+        </p>
       </div>
     </footer>
   );

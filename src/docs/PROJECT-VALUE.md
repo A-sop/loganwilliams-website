@@ -72,5 +72,6 @@ Each time you “wrap up” or “done for the day”:
 |------------|-------------|-------------|-------------|
 | 2025-02-05 | 2.5         | 100         | Auth, RLS, feedback modal, docs, chat primer |
 | 2025-02-08 | 7.85        | 314         | n8n feedback workflow, modal error handling, dev logs, leading-environment rule, docs (~12:30–20:21) |
+| 2026-02-12 | 14          | 560         | logans-tools (header, Concierge screenshot, Using/Offboarding, Impressum), screenshot automation, LDW Impressum (~9:00–00:30) |
 
-**Running total (logged sessions):** 10.35 hrs → **414 EUR** at 40 EUR/hr (2025-02-05 + 2025-02-08). Update after each session.
+**Running total (logged sessions):** 24.35 hrs → **974 EUR** at 40 EUR/hr (2025-02-05 + 2025-02-08 + 2026-02-12). Update after each session.

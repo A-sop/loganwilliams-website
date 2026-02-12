@@ -100,9 +100,10 @@ const apiKey = process.env.OPENAI_API_KEY;
 
 ---
 
-### Clerk (auth)
+### Clerk (auth + billing)
 
-- **Used for:** Sign-in, sign-up, sessions, onboarding.
+- **Used for:** Sign-in, sign-up, sessions, onboarding, Billing (subscriptions).
+- **Billing:** `CLERK_WEBHOOK_SECRET` for webhook signature verification. See [payment-security.md](./payment-security.md).
 - **Env keys:** `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`, `CLERK_SECRET_KEY` (plus sign-in/up URLs in .env).
 - **Future projects / new Clerk app:** Add `*.vercel.app` to Clerk Dashboard → Configure → Domains. Covers all Vercel preview deployments in one go. Add once per Clerk application.
 
@@ -126,6 +127,7 @@ src/docs/n8n-setup.md    — n8n workflow setup guide (lesson 5.2)
 src/docs/mobile-responsive-testing.md — Mobile responsive testing guide (lesson 5.3)
 src/docs/mobile-responsive-checklist.md — Quick testing checklist (lesson 5.3)
 src/docs/webhook-security.md — Webhook security guide (lesson 5.5)
+src/docs/payment-security.md — Payment security checklist (Clerk Billing, feature gates)
 src/lib/openai.ts         — OpenAI client (server-only)
 src/lib/supabase-server.ts — Supabase admin client (server-only)
 src/lib/supabase-client.ts — Supabase browser client (client components; needs NEXT_PUBLIC_*)

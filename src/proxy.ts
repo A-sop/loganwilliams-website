@@ -1,7 +1,14 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
-const isPublicRoute = createRouteMatcher(['/', '/sign-in(.*)', '/sign-up(.*)', '/pricing(.*)']);
+const isPublicRoute = createRouteMatcher([
+  '/',
+  '/sign-in(.*)',
+  '/sign-up(.*)',
+  '/pricing(.*)',
+  '/changelog(.*)',
+  '/api/webhooks/(.*)', // Webhooks verify via signature, not auth
+]);
 const isOnboardingRoute = createRouteMatcher(['/onboarding(.*)']);
 const isAuthExemptAfterLoginRoute = createRouteMatcher(['/onboarding(.*)', '/pricing(.*)']);
 const isWorkspaceRoute = createRouteMatcher(['/workspace(.*)']);

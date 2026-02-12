@@ -45,6 +45,12 @@ export default function RootLayout({
                   >
                     Pricing
                   </Link>
+                  <Link
+                    href="/changelog"
+                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    Changelog
+                  </Link>
                 </div>
                 <div className="flex items-center gap-4">
                   <SignedOut>

@@ -14,16 +14,15 @@ export default async function Home() {
           Hey, I&apos;m Logan
         </h1>
         <p className="text-lg text-muted-foreground">
-          I work with expats on financial planning and write about life in
-          Germany. Based in Cologne.
+          Australian-born Kiwi living in Germany, based in Cologne.
         </p>
       </section>
 
       <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground">
         <p>
-          Clarity on health insurance, pensions, and how the German system
-          works. Insights on life in Germany live here. Work with me when
-          you&apos;re ready.
+          Perspectives on life in Germany. Clarity on health insurance,
+          pensions, and how the German system works. Clarity on investment
+          and financial planning.
         </p>
       </section>
 

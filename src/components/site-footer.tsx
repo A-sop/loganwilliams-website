@@ -8,6 +8,8 @@ import {
   Shield,
   BadgeDollarSign,
   Cookie,
+  Heart,
+  Sparkles,
 } from 'lucide-react';
 import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '@/data/social-links';
@@ -102,6 +104,33 @@ export function SiteFooter() {
                 >
                   <FaInstagram className={iconClass} />
                   Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="text-center">
+            <h3 className={headingClass}>Credits</h3>
+            <ul className="flex flex-col gap-1 items-center">
+              <li>
+                <a
+                  href="https://www.ancestry.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  <Heart className={iconClass} />
+                  Ancestry
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://pirateskills.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  <Sparkles className={iconClass} />
+                  Pirate Skills
                 </a>
               </li>
             </ul>

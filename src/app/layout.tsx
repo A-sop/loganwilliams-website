@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Script from 'next/script';
 import './globals.css';
 import { LocaleProvider } from '@/components/providers/locale-provider';
-import { LanguageToggle } from '@/components/language-toggle';
 import { SiteFooter } from '@/components/site-footer';
+import { WhatsAppWidget } from '@/components/whatsapp-widget';
 
 const GTM_ID = 'GTM-M4BTJ5C';
 
@@ -47,28 +47,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             >
               Logan Williams
             </Link>
-            <nav className="flex items-center gap-1 sm:gap-2">
-              <Link
-                href="/insights"
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-              >
-                Insights
-              </Link>
-              <Link
-                href="/work-with-me"
-                className="rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                Work With Me
-              </Link>
-              <div className="ml-2 border-l border-border pl-2">
-                <LanguageToggle />
-              </div>
-            </nav>
           </header>
           <div className="flex min-h-[calc(100vh-4rem)] flex-col">
             {children}
             <SiteFooter />
           </div>
+          <WhatsAppWidget />
         </LocaleProvider>
       </body>
     </html>

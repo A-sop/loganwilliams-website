@@ -10,6 +10,7 @@ export interface PostMeta {
   date: string;
   excerpt: string;
   topic: Topic;
+  image?: string;
 }
 
 export interface Post extends PostMeta {
@@ -37,6 +38,7 @@ export function getPostBySlug(slug: string): Post | null {
     date: data.date ?? '',
     excerpt: data.excerpt ?? '',
     topic: data.topic ?? 'life-in-germany',
+    image: data.image,
     content,
   };
 }
@@ -52,4 +54,8 @@ export function getAllPosts(): Post[] {
 
 export function getPostsByTopic(topic: Topic): Post[] {
   return getAllPosts().filter((p) => p.topic === topic);
+}
+
+export function getLatestPosts(limit: number = 3): Post[] {
+  return getAllPosts().slice(0, limit);
 }

@@ -1,0 +1,36 @@
+{
+  "impressum": {
+    "name": "Logan D. Williams",
+    "address": "Zülpicher Wall 16",
+    "postalCode": "50674",
+    "city": "Köln",
+    "phone": "+49 221 95491545",
+    "mobile": "+49 157 92373917",
+    "fax": "+49 221 95491554",
+    "email": "inbox@loganwilliams.com",
+    "allfinanzEmail": "Logan.Williams@allfinanz.ag",
+    "allfinanzUrl": "https://www.allfinanz.ag/Logan.Williams",
+    "ustId": "DE338400422",
+    "register34d": "D-QEUR-ITNAF-11",
+    "register34f": "D-F-142-LNK9-53"
+  },
+  "cookies": {
+    "lastUpdated": "2026-02-14",
+    "services": [
+      {
+        "id": "gtm",
+        "name": "Google Tag Manager",
+        "purpose": "Manages analytics and marketing tags. No direct tracking; enables other services when configured.",
+        "provider": "Google LLC",
+        "privacyUrl": "https://policies.google.com/privacy",
+        "necessary": false
+      },
+      {
+        "id": "essential",
+        "name": "Essential / Session",
+        "purpose": "Required for site functionality (e.g. language preference, security).",
+        "necessary": true
+      }
+    ]
+  }
+}

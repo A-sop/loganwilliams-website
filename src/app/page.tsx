@@ -1,7 +1,12 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight, FileText } from 'lucide-react';
+import { format } from 'date-fns';
+import { getLatestPosts } from '@/lib/insights';
 
-export default function Home() {
+export default async function Home() {
+  const latestPosts = getLatestPosts(3);
+
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:py-20">
       <section className="space-y-4">
@@ -16,46 +21,61 @@ export default function Home() {
 
       <section className="mt-10 space-y-4 text-sm leading-relaxed text-muted-foreground">
         <p>
-          I focus on clarity—health insurance, pensions, and how the German
-          system works. Insights on life in Germany and personal finance live
-          here. Work with me when you&apos;re ready.
+          Clarity on health insurance, pensions, and how the German system
+          works. Insights on life in Germany live here. Work with me when
+          you&apos;re ready.
         </p>
       </section>
 
-      <section className="mt-14 flex flex-col gap-4">
-        <Link
-          href="/work-with-me"
-          className="group flex w-full items-center justify-between gap-4 rounded-lg border-2 border-primary bg-primary/10 px-6 py-4 text-left transition-colors hover:bg-primary/20 hover:border-primary"
-        >
-          <span className="font-semibold text-foreground">
-            Work With Me
-          </span>
-          <ArrowRight className="size-5 shrink-0 text-primary transition-transform group-hover:translate-x-1" />
-        </Link>
-        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      {latestPosts.length > 0 && (
+        <section className="mt-14">
+          <h2 className="text-lg font-semibold">Latest insights</h2>
+          <div className="mt-4 flex flex-col gap-6 sm:gap-8">
+            {latestPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/insights/${post.slug}`}
+                className="group block overflow-hidden rounded-xl border border-border transition-colors hover:border-border/80 hover:bg-accent/30"
+              >
+                <div className="aspect-video w-full overflow-hidden bg-muted/50">
+                  {post.image ? (
+                    <Image
+                      src={post.image}
+                      alt=""
+                      width={600}
+                      height={338}
+                      className="h-full w-full object-cover transition-transform group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-muted/80 to-muted/40">
+                      <FileText className="size-12 text-muted-foreground/40" />
+                    </div>
+                  )}
+                </div>
+                <div className="p-4">
+                  <span className="text-xs text-muted-foreground tabular-nums">
+                    {post.date ? format(new Date(post.date), 'MMM d, yyyy') : ''}
+                  </span>
+                  <h3 className="mt-1 font-semibold text-foreground group-hover:text-primary">
+                    {post.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
+                    {post.excerpt}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
           <Link
             href="/insights"
-            className="flex items-center gap-2 rounded-lg border border-border px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:border-border/80 hover:bg-accent hover:text-foreground"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
           >
-            Insights
+            All insights
             <ArrowRight className="size-4" />
           </Link>
-          <Link
-            href="/insights/life-in-germany"
-            className="flex items-center gap-2 rounded-lg border border-border px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:border-border/80 hover:bg-accent hover:text-foreground"
-          >
-            Life in Germany
-            <ArrowRight className="size-4" />
-          </Link>
-          <Link
-            href="/insights/personal-finance"
-            className="flex items-center gap-2 rounded-lg border border-border px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:border-border/80 hover:bg-accent hover:text-foreground"
-          >
-            Personal Finance
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>
-      </section>
+        </section>
+      )}
+
     </main>
   );
 }

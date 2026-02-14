@@ -4,7 +4,7 @@ import { format } from 'date-fns';
 
 export const metadata = {
   title: 'Insights',
-  description: 'Thoughts on life in Germany, personal finance, and navigating the system.',
+  description: 'Thoughts on life in Germany and navigating the system.',
 };
 
 export default function InsightsPage() {
@@ -16,7 +16,7 @@ export default function InsightsPage() {
         Insights
       </h1>
       <p className="mt-2 text-muted-foreground">
-        Thoughts on life in Germany, personal finance, and making sense of it all.
+        Thoughts on life in Germany and making sense of it all.
       </p>
 
       <div className="mt-10 space-y-6">
@@ -39,18 +39,12 @@ export default function InsightsPage() {
         )}
       </div>
 
-      <div className="mt-12 flex gap-4 text-sm">
+      <div className="mt-12">
         <Link
           href="/insights/life-in-germany"
-          className="text-primary hover:underline"
+          className="text-sm text-primary hover:underline"
         >
           Life in Germany
-        </Link>
-        <Link
-          href="/insights/personal-finance"
-          className="text-primary hover:underline"
-        >
-          Personal Finance
         </Link>
       </div>
     </main>

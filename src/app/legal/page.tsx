@@ -40,6 +40,9 @@ export default function LegalPage() {
         <a href="#copyright" className="text-primary hover:underline">
           Copyright / Urheberrecht
         </a>
+        <Link href="/disclaimers" className="text-primary hover:underline">
+          Disclaimers
+        </Link>
       </nav>
 
       <Card id="impressum">
@@ -51,11 +54,9 @@ export default function LegalPage() {
           <section>
             <h3 className="font-medium text-foreground mb-1">Logan D. Williams</h3>
             <p className="text-muted-foreground">
-              Zülpicher Wall 16
+              Telefon: +49 221 95491545
               <br />
-              50674 Köln
-              <br />
-              Telefon: +49 157 92373917
+              Mobil: +49 157 92373917
               <br />
               E-Mail: inbox@loganwilliams.com
             </p>
@@ -76,6 +77,18 @@ export default function LegalPage() {
               von Sachleistungen anfallen (z.B. Schulungen sowie Einladungen für
               die Teilnahme an kulturellen und gesellschaftlichen
               Veranstaltungen, Informationsmaterial, Aufmerksamkeiten).
+            </p>
+          </section>
+          <section>
+            <p className="text-muted-foreground">
+              Im Investmentbereich als Finanzanlagenvermittler gemäß § 34f Abs.
+              1 Nr. 1 GewO nicht unabhängig vermittelnd tätig für: DWS Investment
+              GmbH, DWS Investment S.A., Generali Investments Deutschland,
+              Allianz Global Investors, Allianz Global Investors Luxembourg, SEB
+              Investment, DWS Grundbesitz GmbH. Die Anlageberatung und
+              Anlagevermittlung zu Investmentfonds erfolgen in deutscher und –
+              soweit mit dem Vermögensberater individuell vereinbart – in
+              englischer Sprache.
             </p>
           </section>
           <section>
@@ -109,10 +122,15 @@ export default function LegalPage() {
             Willy-Brandt-Platz 3, 50679 Köln
           </p>
           <p>
-            Gemeinsame Registerstelle für § 34d GewO: Deutscher Industrie- und
-            Handelskammertag (DIHK) e.V., Breite Straße 29, 10178 Berlin,
-            www.vermittlerregister.info. Registernummer nach § 34d GewO:
-            D-QEUR-ITNAF-11
+            Erlaubnis- und Aufsichtsbehörde gemäß § 34f GewO: IHK zu Köln,
+            Unter Sachsenhausen 5-7, 50667 Köln
+          </p>
+          <p>
+            Gemeinsame Registerstelle für § 34d GewO und § 34f GewO: Deutscher
+            Industrie- und Handelskammertag (DIHK) e.V., Breite Straße 29, 10178
+            Berlin, www.vermittlerregister.info. Registernummer nach § 34d
+            GewO: D-QEUR-ITNAF-11. Registernummer nach § 34f GewO:
+            D-F-142-LNK9-53
           </p>
         </CardContent>
       </Card>

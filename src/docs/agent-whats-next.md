@@ -14,6 +14,8 @@ Use this file to orient AI agents on current priorities and open tasks.
 
 When working on Linear issues, include the issue ID in commit messages (e.g. `fix: onboarding loop. Fixes A-XX`). See `GIT-WORKFLOW.md`.
 
+**When adding to human-todos.md:** Automatically create a Linear issue (prefix: LDW-DEV-WEB for dev tasks, LDW-BIZ for business). Link the issue ID in the checklist item. See `.cursor/rules/linear-task-management.mdc`.
+
 ## Cost estimates
 
 Use **average productivity** for new estimates. See `private/cost-estimate-reference.md` (gitignored).

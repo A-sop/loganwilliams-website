@@ -1,0 +1,2 @@
+Record Id,Price Book Owner.id,Created By.id,Modified By.id,Created Time,Modified Time,Price Book Name,Active,Pricing Model,Currency,Exchange Rate,Pricing Details,Description,Layout.id,Tag,User Modified Time,System Related Activity Time,User Related Activity Time,System Modified Time,Locked,Record Status,Last Activity Time
+zcrm_318358000002038148,zcrm_318358000000245015,zcrm_318358000000245015,zcrm_318358000000245015,2017-02-05 05:12:39,2017-02-05 05:12:39,Legacy WSE Students,true,,EUR,1.000000000,,Test pricebook,zcrm_318358000000032057,,,,,,false,Available,

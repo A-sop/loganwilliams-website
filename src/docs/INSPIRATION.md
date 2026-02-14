@@ -99,7 +99,7 @@ Single reference for voice, positioning, design, and who to learn from. Business
 - **Theme:** Dark default (implemented). Light available via system/custom toggle if added later.
 - **Positioning:** Business — financial planning for expats
 - **Content:** Insights (Life in Germany, Personal Finance) as trust-builders
-- **Contact:** Low-friction; no "first chats free" or payment-pressure messaging
+- **Contact:** Low-friction; no gimmicky intro-offer or payment-pressure messaging
 - **Socials:** LinkedIn only on front-end; Instagram, Facebook, X stored for later
 
 ---

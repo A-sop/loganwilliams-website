@@ -22,7 +22,7 @@ Content to reuse or reference when building the new site.
 >
 > Also on this site: A Book Club because I was craving better conversations. Thoughts on Life in Germany from someone who's lived it sideways. My older Model work (yes, really). And ways to work with me—especially if you like coffee and a clear plan.
 >
-> First chats are always free—because finding the right fit should feel effortless and mutually rewarding.
+> Book a chat to see if we're a fit—because finding the right match should feel straightforward.
 
 ---
 

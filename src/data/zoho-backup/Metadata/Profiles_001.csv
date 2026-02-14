@@ -1,0 +1,4 @@
+Record Id,Profile Name,Created By,Modified By,Created Time,Modified Time,Description
+zcrm_318358000000026972,Administrator,,,,,crm.security.profile.admin.desc
+zcrm_318358000000026974,Standard,,,,,crm.security.profile.std.desc
+zcrm_318358000000811003,ClientPortal,zcrm_318358000000245015,zcrm_318358000000245015,2021-02-05 17:26:08,2022-01-16 20:44:42,CLIENT_PORTAL_PROFILE

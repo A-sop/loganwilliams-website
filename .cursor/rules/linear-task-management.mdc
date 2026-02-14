@@ -95,10 +95,23 @@ All Linear issues and tasks use structured prefixes:
 
 ---
 
+## Automatic: human-todos → Linear
+
+**When adding a new checklist item to `src/docs/human-todos.md`, automatically:**
+1. Create a corresponding Linear issue using the prefix convention above
+2. Use `LDW-DEV-WEB` for dev tasks on the website, `LDW-BIZ` for strategy/content
+3. Include the Linear issue ID in the human-todos item (e.g. `- [ ] **A-100** Set up cookie consent…`)
+4. Add the issue to the "Linear Issues Created" list at the top of human-todos.md if that section exists
+
+**Example:** Adding "Set up cookie consent management" → create `LDW-DEV-WEB Set up cookie consent management` in Linear, then reference `A-100` (or the returned ID) in human-todos.
+
+---
+
 ## Acknowledgment
 
 **I acknowledge this prefix system and will:**
 - ✅ Use appropriate owner prefix (CM, LDW, LT, GFP) for each task
 - ✅ Create Linear issues for any project from this workspace when requested
 - ✅ Use `LDW-` when in loganwilliams-website for this project's tasks
+- ✅ **Create a Linear issue automatically whenever adding a new item to human-todos.md**
 - ✅ Treat GFP tasks with regulatory sensitivity

@@ -19,11 +19,13 @@
 | `tasks`               | ✅ Own rows only (`auth.jwt()->>'sub' = user_id`) | ✅ Must insert own `user_id` | Not used in app yet |
 | `workspace_documents`  | ✅ Own rows only | ✅ Must insert own `user_id` | Not used in app yet |
 | `feedback`            | ✅ Own or `user_id IS NULL` | ✅ Own or NULL | Not used in app |
+| `households`, `contacts`, `contact_roles`, `contact_sources`, `commission_records`, `household_tasks` | ✅ Own rows only | ✅ Must insert own `user_id` | Contact network; `20260213000000_contact_network_tables.sql` |
 
 - **tasks:** `20260205120000_clerk_tasks_rls.sql`
 - **workspace_documents:** `20260206120000_workspace_documents.sql`
 - **feedback:** `20260206000000_feedback_table.sql`
 - **uploads / task_suggestions:** RLS enabled, no permissive policies (access only via service_role if needed).
+- **Contact network tables:** `20260213000000_contact_network_tables.sql` — full CRUD policies per user.
 
 ---
 

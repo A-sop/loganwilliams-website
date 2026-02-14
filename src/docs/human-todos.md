@@ -14,6 +14,13 @@
 - A-26 to A-63: Level 6 tasks (Payment System)
 - A-64: Future Features (Document Generation Tool)
 - A-65: Quick Test (Clerk + Supabase)
+- A-100: LDW-DEV-WEB Set up cookie consent management
+
+---
+
+## Website (loganwilliams.com)
+
+- [ ] **A-100** Set up cookie consent management — Banner + conditional GTM load before enabling analytics/marketing tags. See `/cookies` page.
 
 ---
 

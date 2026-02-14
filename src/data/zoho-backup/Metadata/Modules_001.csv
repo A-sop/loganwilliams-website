@@ -1,0 +1,55 @@
+Module Id,Name,Label,Api Name,Singular Label,Module Type,Web Link,Visibility,Parent Module Id,Modified By,Modified Time
+zcrm_318358000000000043,Leads,Leads,Leads,Lead,1,,1,,zcrm_318358000000245015,2023-03-06 17:23:39
+zcrm_318358000000000045,Accounts,Accounts,Accounts,Account,1,,1,,zcrm_318358000000245015,2022-07-24 12:13:32
+zcrm_318358000000000047,Contacts,Contacts,Contacts,Contact,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:00
+zcrm_318358000000000049,Potentials,Deals,Deals,Deal,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:06
+zcrm_318358000000000051,Campaigns,Campaigns,Campaigns,Campaign,1,,1,,zcrm_318358000000245015,2022-06-14 21:39:18
+zcrm_318358000000000061,Users,Users,users,User,1,,1,,,
+zcrm_318358000000000063,Tasks,Tasks,Tasks,Task,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:01
+zcrm_318358000000000065,Events,Meetings,Events,Meeting,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:01
+zcrm_318358000000000067,Calls,Calls,Calls,Call,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:02
+zcrm_318358000000000069,Notes,Notes,Notes,Note,1,,1,,,
+zcrm_318358000000000071,Competitors,Competitors,Competitors,Competitor,1,,1,,,
+zcrm_318358000000000073,Forecasts,Forecasts,Forecasts,Forecast,1,,1,,,
+zcrm_318358000000000093,Visits,Visits,Visits,Visit,1,,1,,,
+zcrm_318358000000000095,Cases,Cases,Cases,Case,1,,1,,,
+zcrm_318358000000000097,Solutions,Solutions,Solutions,Solution,1,,1,,,
+zcrm_318358000000000099,Products,Products,Products,Product,1,,1,,,
+zcrm_318358000000000101,Vendors,Vendors,Vendors,Vendor,1,,1,,,
+zcrm_318358000000000103,PriceBooks,Price Books,Price_Books,Price Book,1,,1,,,
+zcrm_318358000000000105,Quotes,Quotes,Quotes,Quote,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:03
+zcrm_318358000000000107,SalesOrders,Sales Orders,Sales_Orders,Sales Order,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:03
+zcrm_318358000000000109,PurchaseOrders,Purchase Orders,Purchase_Orders,Purchase Order,1,,1,,,
+zcrm_318358000000000111,Invoices,Invoices,Invoices,Invoice,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:04
+zcrm_318358000000000113,Attachments,Attachments,Attachments,Attachment,1,,1,,,
+zcrm_318358000000000115,Emails,Emails,Emails,Email,1,,1,,zcrm_318358000000245015,2023-03-06 16:33:00
+zcrm_318358000000104001,DealContactRole,Deal Contact Role,DealContactRole,Deal Contact Role,1,,1,,,
+zcrm_318358000000112001,AccountProductRelations,Account Product Relation,AccountProductRelations,Account Product Relations,1,,1,,,
+zcrm_318358000000112013,LeadProductRelations,Lead Product Relation,LeadProductRelations,Lead Product Relations,1,,1,,,
+zcrm_318358000000112025,ContactProductRelations,Contact Product Relation,ContactProductRelations,Contact Product Relations,1,,1,,,
+zcrm_318358000000112037,DealProductRelations,Deal Product Relation,DealProductRelations,Deal Product Relations,1,,1,,,
+zcrm_318358000000113001,DealHistory,Stage History,DealHistory,Stage History,9,,1,zcrm_318358000000000049,,
+zcrm_318358000000154001,Invitees,Invitees,Invitees,Invitee,1,,1,,,
+zcrm_318358000000174001,InvoicedItems,Invoiced Items,Invoiced_Items,Invoiced Items,7,,10236,zcrm_318358000000000111,zcrm_318358000000245015,2024-11-24 06:20:02
+zcrm_318358000000174419,PurchaseItems,Purchase Items,Purchase_Items,Purchase Items,7,,10236,zcrm_318358000000000109,zcrm_318358000000245015,2024-11-24 06:20:02
+zcrm_318358000000174837,OrderedItems,Ordered Items,Ordered_Items,Ordered Items,7,,10236,zcrm_318358000000000107,zcrm_318358000000245015,2024-11-24 06:20:02
+zcrm_318358000000175255,QuotedItems,Quoted Items,Quoted_Items,Quoted Items,7,,10236,zcrm_318358000000000105,zcrm_318358000000245015,2024-11-24 06:20:02
+zcrm_318358000000177713,Profiles,Profiles,Profiles,Profile,1,,1,,,
+zcrm_318358000000177737,Roles,Roles,Roles,Role,1,,1,,,
+zcrm_318358000000198140,Modules,Modules,Modules,Module,1,,1,,,
+zcrm_318358000000205016,Fields,Fields,Fields,Field,1,,1,,,
+zcrm_318358000000237101,Territories,Territories,Territories,Territory,1,,1,,,
+zcrm_318358000000286005,CustomModule1,Zoho ShowTime,zohoshowtime__Zoho_ShowTime,Zoho ShowTime,4,,1,,zcrm_318358000000238001,2020-11-29 22:15:10
+zcrm_318358000000286944,CustomModule2,ShowTime Sessions,zohoshowtime__ShowTime_Sessions,ShowTime Sessions,4,,1,,zcrm_318358000000238001,2020-11-29 22:15:15
+zcrm_318358000000317001,CustomModule5005,Items,CustomModule5005,Item,1,,1,zcrm_318358000000321460,,2025-02-01 01:21:59
+zcrm_318358000000317796,CustomModule5001,Invoices,CustomModule5001,Invoice,1,,1,zcrm_318358000000321460,,2025-02-01 01:21:59
+zcrm_318358000000318807,CustomModule5002,Estimates,CustomModule5002,Estimate,1,,1,zcrm_318358000000321460,,2025-02-01 01:21:59
+zcrm_318358000000319685,CustomModule5003,Purchase Orders,CustomModule5003,Purchase Order,1,,1,zcrm_318358000000321460,,2025-02-01 01:21:59
+zcrm_318358000000320531,CustomModule5004,Sales Orders,CustomModule5004,Sales Order,1,,1,zcrm_318358000000321460,,2025-02-01 01:21:59
+zcrm_318358000000593007,Orchestration1,Qualify Leads through Call,Qualify_Leads_through_Call,Qualify Leads through Call,1,,6142,,zcrm_318358000000245015,2021-01-13 01:55:12
+zcrm_318358000000593998,Orchestration2,Qualify Leads through Email,Qualify_Leads_through_Email,Qualify Leads through Email,1,,6142,,zcrm_318358000000245015,2021-01-13 01:55:15
+zcrm_318358000005718015,LinkingModule1,Lead Status History,Lead_Status_History,Lead Status History,9,,1,zcrm_318358000000000043,zcrm_318358000000245015,2022-07-24 08:44:18
+zcrm_318358000007643004,PathFinder3,Sales Journey (Default PathFinder),Sales_Journey_Default_PathFinder,Sales Journey (Default PathFinder),1,,6142,,zcrm_318358000000245015,2023-03-06 16:33:06
+zcrm_318358000008325017,Global Fileupload,Global Fileupload,Global_Fileupload__s,Global Fileupload,1,,14334,,,
+zcrm_318358000008325039,Fileupload1,Gehaltsabrechnung - income statement,File_Upload_1__s,Gehaltsabrechnung - income statement,1,,2046,zcrm_318358000008325017,,
+zcrm_318358000008325041,Fileupload2,Renteninformation - retirement Statement,File_Upload_2__s,Renteninformation - retirement Statement,1,,2046,zcrm_318358000008325017,,

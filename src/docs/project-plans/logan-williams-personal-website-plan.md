@@ -92,7 +92,7 @@ Create a personal website for Logan Williams (loganwilliams.com) with this brief
 
 **Tech:** Next.js 16, App Router, Tailwind 4, shadcn/ui (new-york). No auth, no database for MVP. Blog = MDX or markdown files in repo.
 
-**Tone:** Warm, direct, "first chats always free." Like pirateskills.com: confident but approachable.
+**Tone:** Warm, direct, "Book a chat to see if we're a fit." Like pirateskills.com: confident but approachable.
 
 **Existing content:** Use placeholder copy; real copy from https://www.loganwilliams.com/ can be pasted in later. Match structure and intent, not verbatim.
 

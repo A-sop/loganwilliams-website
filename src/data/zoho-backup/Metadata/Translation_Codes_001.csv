@@ -1,0 +1,371 @@
+Translation Id,Language Code,Translated Value,Type
+zcrm_318358000000002265,zcrm_en_US,Prospecting,1
+zcrm_318358000000002267,zcrm_en_US,Administrative,1
+zcrm_318358000000002269,zcrm_en_US,Negotiation,1
+zcrm_318358000000002273,zcrm_en_US,Project,1
+zcrm_318358000000002275,zcrm_en_US,Desk,1
+zcrm_318358000000002411,zcrm_en_US,Advertisement,1
+zcrm_318358000000002413,zcrm_en_US,Cold Call,1
+zcrm_318358000000002415,zcrm_en_US,Employee Referral,1
+zcrm_318358000000002417,zcrm_en_US,External Referral,1
+zcrm_318358000000002419,zcrm_en_US,Partner,1
+zcrm_318358000000002421,zcrm_en_US,Public Relations,1
+zcrm_318358000000002423,zcrm_en_US,Trade Show,1
+zcrm_318358000000002425,zcrm_en_US,Web Form,1
+zcrm_318358000000002427,zcrm_en_US,Search Engine,1
+zcrm_318358000000002429,zcrm_en_US,Social Tab,1
+zcrm_318358000000002433,zcrm_en_US,Advertisement,1
+zcrm_318358000000002435,zcrm_en_US,Cold Call,1
+zcrm_318358000000002437,zcrm_en_US,Referral,1
+zcrm_318358000000002441,zcrm_en_US,Partner,1
+zcrm_318358000000002445,zcrm_en_US,Trade Show,1
+zcrm_318358000000002447,zcrm_en_US,Web Form,1
+zcrm_318358000000002449,zcrm_en_US,Search Engine,1
+zcrm_318358000000002451,zcrm_en_US,Social-Facebook,1
+zcrm_318358000000002453,zcrm_en_US,Social-Twitter,1
+zcrm_318358000000002455,zcrm_en_US,Pre-Qualified,1
+zcrm_318358000000002457,zcrm_en_US,Contacted,1
+zcrm_318358000000002459,zcrm_en_US,Contact in Future,1
+zcrm_318358000000002461,zcrm_en_US,Not Contacted,1
+zcrm_318358000000002463,zcrm_en_US,Attempted to Contact,1
+zcrm_318358000000002465,zcrm_en_US,Lost Lead,1
+zcrm_318358000000002469,zcrm_en_US,Junk Lead,1
+zcrm_318358000000092001,zcrm_en_US,Not Qualified,1
+zcrm_318358000000165003,zcrm_en_US,Interested,1
+zcrm_318358000000165005,zcrm_en_US,Not interested,1
+zcrm_318358000000165007,zcrm_en_US,No response/Busy,1
+zcrm_318358000000165009,zcrm_en_US,Requested more info,1
+zcrm_318358000000165011,zcrm_en_US,Requested call back,1
+zcrm_318358000000165013,zcrm_en_US,Invalid number,1
+zcrm_318358000000251407,zcrm_en_US,Online Store,1
+zcrm_318358000000251409,zcrm_en_US,Seminar Partner,1
+zcrm_318358000000251411,zcrm_en_US,Web Download,1
+zcrm_318358000000304027,zcrm_en_US,BookingId,2
+zcrm_318358000000304036,zcrm_en_US,Booking Summary,2
+zcrm_318358000000309112,zcrm_en_US,Average monthly income,2
+zcrm_318358000000309120,zcrm_en_US,Average monthly income,2
+zcrm_318358000000309126,zcrm_en_US,Average monthly income,2
+zcrm_318358000000309134,zcrm_en_US,Average monthly income,2
+zcrm_318358000000309140,zcrm_en_US,Expected retirement income,2
+zcrm_318358000000309148,zcrm_en_US,Expected retirement income,2
+zcrm_318358000000309154,zcrm_en_US,Expected retirement income,2
+zcrm_318358000000309162,zcrm_en_US,Expected retirement income,2
+zcrm_318358000000312888,zcrm_en_US,Gehaltsabrechnung - income statement,2
+zcrm_318358000000312894,zcrm_en_US,Renteninformation - retirement Statement,2
+zcrm_318358000000409129,zcrm_en_US,Date of Birth,2
+zcrm_318358000000410071,zcrm_en_US,dummy1,1
+zcrm_318358000000410073,zcrm_en_US,dummy2,1
+zcrm_318358000000410086,zcrm_en_US,dummy1,1
+zcrm_318358000000410088,zcrm_en_US,dummy2,1
+zcrm_318358000000593609,zcrm_en_US,Call attempt 1 > Trigger - Call unattended > Call,2
+zcrm_318358000000593617,zcrm_en_US,Call attempt 1 > Trigger - Call unattended > CurrentRecord,2
+zcrm_318358000000593629,zcrm_en_US,Lead answered the call > Trigger - Edit > EditedRecord,2
+zcrm_318358000000593639,zcrm_en_US,Lead answered the call > Trigger - Edit > Module,2
+zcrm_318358000000593649,zcrm_en_US,Scheduled call > Trigger - Create > CreatedRecord,2
+zcrm_318358000000593659,zcrm_en_US,Scheduled call > Trigger - Create > Module,2
+zcrm_318358000000593669,zcrm_en_US,Lead to Contact from manual attempt > Trigger - Convert > CreatedContact,2
+zcrm_318358000000593677,zcrm_en_US,Lead to Contact from manual attempt > Trigger - Convert > CreatedDeal,2
+zcrm_318358000000593685,zcrm_en_US,Lead to Contact from manual attempt > Trigger - Convert > CreatedAccount,2
+zcrm_318358000000593699,zcrm_en_US,Lead to Contact from manual attempt > Trigger - Convert > ConvertedTime,2
+zcrm_318358000000593705,zcrm_en_US,Lead was reached after schedule miss > Trigger - Edit > EditedRecord,2
+zcrm_318358000000593715,zcrm_en_US,Lead was reached after schedule miss > Trigger - Edit > Module,2
+zcrm_318358000000593725,zcrm_en_US,Lead incoming call > Trigger - Call received > Call,2
+zcrm_318358000000593733,zcrm_en_US,Lead incoming call > Trigger - Call received > CurrentRecord,2
+zcrm_318358000000593745,zcrm_en_US,Lead was reached > Trigger - Edit > EditedRecord,2
+zcrm_318358000000593755,zcrm_en_US,Lead was reached > Trigger - Edit > Module,2
+zcrm_318358000000593765,zcrm_en_US,Call attempt direct > Trigger - Call unattended > Call,2
+zcrm_318358000000593773,zcrm_en_US,Call attempt direct > Trigger - Call unattended > CurrentRecord,2
+zcrm_318358000000593785,zcrm_en_US,Lead incoming call from create > Trigger - Call received > Call,2
+zcrm_318358000000593793,zcrm_en_US,Lead incoming call from create > Trigger - Call received > CurrentRecord,2
+zcrm_318358000000593805,zcrm_en_US,Create Lead > Trigger - Create > CreatedRecord,2
+zcrm_318358000000593815,zcrm_en_US,Create Lead > Trigger - Create > Module,2
+zcrm_318358000000593825,zcrm_en_US,Lead incoming call after call attempt 1 > Trigger - Call received > Call,2
+zcrm_318358000000593833,zcrm_en_US,Lead incoming call after call attempt 1 > Trigger - Call received > CurrentRecord,2
+zcrm_318358000000593845,zcrm_en_US,Lead contacted us 3 > Trigger - Call received > Call,2
+zcrm_318358000000593853,zcrm_en_US,Lead contacted us 3 > Trigger - Call received > CurrentRecord,2
+zcrm_318358000000593865,zcrm_en_US,Lead incoming call after call attempt 2 > Trigger - Call received > Call,2
+zcrm_318358000000593873,zcrm_en_US,Lead incoming call after call attempt 2 > Trigger - Call received > CurrentRecord,2
+zcrm_318358000000593885,zcrm_en_US,Call attempt 2 > Trigger - Call unattended > Call,2
+zcrm_318358000000593893,zcrm_en_US,Call attempt 2 > Trigger - Call unattended > CurrentRecord,2
+zcrm_318358000000593905,zcrm_en_US,Lead to contact > Trigger - Convert > CreatedContact,2
+zcrm_318358000000593913,zcrm_en_US,Lead to contact > Trigger - Convert > CreatedDeal,2
+zcrm_318358000000593921,zcrm_en_US,Lead to contact > Trigger - Convert > CreatedAccount,2
+zcrm_318358000000593935,zcrm_en_US,Lead to contact > Trigger - Convert > ConvertedTime,2
+zcrm_318358000000593941,zcrm_en_US,Missed scheduled call > Trigger - Call overdue > Call,2
+zcrm_318358000000593949,zcrm_en_US,Missed scheduled call > Trigger - Call overdue > CurrentRecord,2
+zcrm_318358000000593972,zcrm_en_US,Lead contacted us > instant_action_Fieldupdate1 > Module,2
+zcrm_318358000000594508,zcrm_en_US,Email sent > Trigger - Email Sent > Email,2
+zcrm_318358000000594516,zcrm_en_US,Email sent > Trigger - Email Sent > CurrentRecord,2
+zcrm_318358000000594620,zcrm_en_US,Lead Clicked email 3 > Trigger - Email clicked > Email,2
+zcrm_318358000000594628,zcrm_en_US,Lead Clicked email 3 > Trigger - Email clicked > CurrentRecord,2
+zcrm_318358000000594640,zcrm_en_US,Email Follow 2 > Trigger - Email Sent > Email,2
+zcrm_318358000000594648,zcrm_en_US,Email Follow 2 > Trigger - Email Sent > CurrentRecord,2
+zcrm_318358000000594660,zcrm_en_US,Lead Clicked email 2 > Trigger - Email clicked > Email,2
+zcrm_318358000000594668,zcrm_en_US,Lead Clicked email 2 > Trigger - Email clicked > CurrentRecord,2
+zcrm_318358000000594680,zcrm_en_US,Email Bounced > Trigger - Email Unsubscribe > CurrentRecord,2
+zcrm_318358000000594690,zcrm_en_US,Email Bounced > Trigger - Email bounced > Email,2
+zcrm_318358000000594698,zcrm_en_US,Email Bounced > Trigger - Email bounced > CurrentRecord,2
+zcrm_318358000000594710,zcrm_en_US,Email Follow 1 > Trigger - Email Sent > Email,2
+zcrm_318358000000594718,zcrm_en_US,Email Follow 1 > Trigger - Email Sent > CurrentRecord,2
+zcrm_318358000000594730,zcrm_en_US,Lead Clicked email > Trigger - Email clicked > Email,2
+zcrm_318358000000594738,zcrm_en_US,Lead Clicked email > Trigger - Email clicked > CurrentRecord,2
+zcrm_318358000000594750,zcrm_en_US,Unsubscribed > Trigger - Email Unsubscribe > CurrentRecord,2
+zcrm_318358000000594760,zcrm_en_US,Unsubscribe 3 > Trigger - Email Unsubscribe > CurrentRecord,2
+zcrm_318358000000594770,zcrm_en_US,Unsubscribe 4 > Trigger - Email Unsubscribe > CurrentRecord,2
+zcrm_318358000000594780,zcrm_en_US,Unsubscribed 2 > Trigger - Email Unsubscribe > CurrentRecord,2
+zcrm_318358000000594790,zcrm_en_US,Lead Creation > Trigger - Create > CreatedRecord,2
+zcrm_318358000000594800,zcrm_en_US,Lead Creation > Trigger - Create > Module,2
+zcrm_318358000000594810,zcrm_en_US,Unsubscribe 5 > Trigger - Email Unsubscribe > CurrentRecord,2
+zcrm_318358000000594820,zcrm_en_US,Lead opens email 2 > Trigger - Email opened > Email,2
+zcrm_318358000000594828,zcrm_en_US,Lead opens email 2 > Trigger - Email opened > CurrentRecord,2
+zcrm_318358000000594840,zcrm_en_US,Lead opens email > Trigger - Email opened > Email,2
+zcrm_318358000000594848,zcrm_en_US,Lead opens email > Trigger - Email opened > CurrentRecord,2
+zcrm_318358000000594860,zcrm_en_US,Lead opens email 3 > Trigger - Email opened > Email,2
+zcrm_318358000000594868,zcrm_en_US,Lead opens email 3 > Trigger - Email opened > CurrentRecord,2
+zcrm_318358000000594930,zcrm_en_US,Lead opened Email > instant_action_Fieldupdate1 > Module,2
+zcrm_318358000000594938,zcrm_en_US,Junk Lead > instant_action_Fieldupdate1 > Module,2
+zcrm_318358000000594946,zcrm_en_US,Lead Created > instant_action_Fieldupdate1 > Module,2
+zcrm_318358000000594954,zcrm_en_US,Attempted to Contact Lead > instant_action_Fieldupdate1 > Module,2
+zcrm_318358000000594972,zcrm_en_US,Lead Clicked on Email > instant_action_Task1 > AssignedTask,2
+zcrm_318358000000594988,zcrm_en_US,Lead opened Email > scheduled_action1_Task1 > AssignedTask,2
+zcrm_318358000000822278,zcrm_en_US,Pick List 1,2
+zcrm_318358000000822280,zcrm_en_US,Option 1,1
+zcrm_318358000000822282,zcrm_en_US,Option 2,1
+zcrm_318358000000822293,zcrm_en_US,Pick List 1,2
+zcrm_318358000000822295,zcrm_en_US,Option 1,1
+zcrm_318358000000822297,zcrm_en_US,Option 2,1
+zcrm_318358000000822308,zcrm_en_US,Allfinanzkunde,2
+zcrm_318358000000822310,zcrm_en_US,VM,1
+zcrm_318358000000822312,zcrm_en_US,Interessent,1
+zcrm_318358000000822323,zcrm_en_US,Pick List 1,2
+zcrm_318358000000822325,zcrm_en_US,Option 1,1
+zcrm_318358000000822327,zcrm_en_US,Option 2,1
+zcrm_318358000000862020,zcrm_en_US,Zoho Campaigns,1
+zcrm_318358000000862021,zcrm_en_US,Auto Responder (Zoho Campaigns),1
+zcrm_318358000000862022,zcrm_en_US,Follow up Message (Zoho Campaigns),1
+zcrm_318358000000862023,zcrm_en_US,Zoho Backstage,1
+zcrm_318358000001283586,zcrm_en_US,Ads-Google,1
+zcrm_318358000002041131,zcrm_en_US,Closed (Won),1
+zcrm_318358000002041133,zcrm_en_US,Hot,1
+zcrm_318358000002042025,zcrm_en_US,Dropbox Folder ID,2
+zcrm_318358000002042032,zcrm_en_US,Account Image,2
+zcrm_318358000002042047,zcrm_en_US,Dropbox Folder ID,2
+zcrm_318358000002048202,zcrm_en_US,Large Enterprise,1
+zcrm_318358000002048204,zcrm_en_US,Small/Medium Enterprise,1
+zcrm_318358000002048394,zcrm_en_US,Frau,1
+zcrm_318358000002048396,zcrm_en_US,Herr,1
+zcrm_318358000002076969,zcrm_en_US,Other Suburb,2
+zcrm_318358000002076976,zcrm_en_US,Mailing Suburb,2
+zcrm_318358000002076987,zcrm_en_US,Languages,2
+zcrm_318358000003022160,zcrm_en_US,Campaign Subject,2
+zcrm_318358000003022171,zcrm_en_US,Sender Name,2
+zcrm_318358000003022178,zcrm_en_US,Sender Address,2
+zcrm_318358000003022180,zcrm_en_US,dummy1,1
+zcrm_318358000003022182,zcrm_en_US,dummy2,1
+zcrm_318358000003022195,zcrm_en_US,Reply-to Address,2
+zcrm_318358000003022197,zcrm_en_US,dummy1,1
+zcrm_318358000003022199,zcrm_en_US,dummy2,1
+zcrm_318358000005305778,zcrm_en_US,Event Name,2
+zcrm_318358000005305787,zcrm_en_US,Event Category,2
+zcrm_318358000005305789,zcrm_en_US,Art & Photos,1
+zcrm_318358000005305791,zcrm_en_US,Automotive,1
+zcrm_318358000005305793,zcrm_en_US,Business,1
+zcrm_318358000005305795,zcrm_en_US,Career,1
+zcrm_318358000005305797,zcrm_en_US,Data & Analytics,1
+zcrm_318358000005305799,zcrm_en_US,Design,1
+zcrm_318358000005305801,zcrm_en_US,Devices & Hardware,1
+zcrm_318358000005305803,zcrm_en_US,Economy & Finance,1
+zcrm_318358000005305805,zcrm_en_US,Education,1
+zcrm_318358000005305807,zcrm_en_US,Engineering,1
+zcrm_318358000005305809,zcrm_en_US,Entertainment & Humor,1
+zcrm_318358000005305811,zcrm_en_US,Environment,1
+zcrm_318358000005305813,zcrm_en_US,Food,1
+zcrm_318358000005305815,zcrm_en_US,Government & Nonprofit,1
+zcrm_318358000005305817,zcrm_en_US,Health & Medicine,1
+zcrm_318358000005305819,zcrm_en_US,Healthcare,1
+zcrm_318358000005305821,zcrm_en_US,Internet,1
+zcrm_318358000005305823,zcrm_en_US,Investor Relations,1
+zcrm_318358000005305825,zcrm_en_US,Law,1
+zcrm_318358000005305827,zcrm_en_US,Leadership & Management,1
+zcrm_318358000005305829,zcrm_en_US,Lifestyle,1
+zcrm_318358000005305831,zcrm_en_US,Marketing,1
+zcrm_318358000005305833,zcrm_en_US,Mobile,1
+zcrm_318358000005305835,zcrm_en_US,News & Politics,1
+zcrm_318358000005305837,zcrm_en_US,Presentations & Public Speaking,1
+zcrm_318358000005305839,zcrm_en_US,Real Estate,1
+zcrm_318358000005305841,zcrm_en_US,Recruiting & HR,1
+zcrm_318358000005305843,zcrm_en_US,Retail,1
+zcrm_318358000005305845,zcrm_en_US,Sales,1
+zcrm_318358000005305847,zcrm_en_US,Science,1
+zcrm_318358000005305849,zcrm_en_US,Self Improvement,1
+zcrm_318358000005305851,zcrm_en_US,Services,1
+zcrm_318358000005305853,zcrm_en_US,Small Business & Entrepreneurship,1
+zcrm_318358000005305855,zcrm_en_US,Social Media,1
+zcrm_318358000005305857,zcrm_en_US,Software,1
+zcrm_318358000005305859,zcrm_en_US,Spiritual,1
+zcrm_318358000005305861,zcrm_en_US,Sports,1
+zcrm_318358000005305863,zcrm_en_US,Technology,1
+zcrm_318358000005305865,zcrm_en_US,Travel,1
+zcrm_318358000005305867,zcrm_en_US,Others,1
+zcrm_318358000005305869,zcrm_en_US,User conference,1
+zcrm_318358000005305871,zcrm_en_US,Seminar,1
+zcrm_318358000005305873,zcrm_en_US,Workshop,1
+zcrm_318358000005305927,zcrm_en_US,Event Start Date,2
+zcrm_318358000005305936,zcrm_en_US,Event End Date,2
+zcrm_318358000005305945,zcrm_en_US,Event Language,2
+zcrm_318358000005305947,zcrm_en_US,Afrikaans,1
+zcrm_318358000005305949,zcrm_en_US,Azerbaijani,1
+zcrm_318358000005305951,zcrm_en_US,BahasaIndonesia,1
+zcrm_318358000005305953,zcrm_en_US,BahasaMelayu,1
+zcrm_318358000005305955,zcrm_en_US,Basque,1
+zcrm_318358000005305957,zcrm_en_US,Bengali,1
+zcrm_318358000005305959,zcrm_en_US,Bosnian,1
+zcrm_318358000005305961,zcrm_en_US,Breton,1
+zcrm_318358000005305963,zcrm_en_US,Burmese,1
+zcrm_318358000005305965,zcrm_en_US,Chuvash,1
+zcrm_318358000005305967,zcrm_en_US,Dansk,1
+zcrm_318358000005305969,zcrm_en_US,Deutsch,1
+zcrm_318358000005305971,zcrm_en_US,Eesti,1
+zcrm_318358000005305973,zcrm_en_US,English,1
+zcrm_318358000005305975,zcrm_en_US,Esperanto,1
+zcrm_318358000005305977,zcrm_en_US,Faroese,1
+zcrm_318358000005305979,zcrm_en_US,Frisian,1
+zcrm_318358000005305981,zcrm_en_US,Gallegan,1
+zcrm_318358000005305983,zcrm_en_US,Georgian,1
+zcrm_318358000005305985,zcrm_en_US,Javanese,1
+zcrm_318358000005305987,zcrm_en_US,Kannada,1
+zcrm_318358000005305989,zcrm_en_US,Kazakh,1
+zcrm_318358000005305991,zcrm_en_US,Khmer,1
+zcrm_318358000005305993,zcrm_en_US,Kirghiz,1
+zcrm_318358000005305995,zcrm_en_US,Lao,1
+zcrm_318358000005305997,zcrm_en_US,Latviešu,1
+zcrm_318358000005305999,zcrm_en_US,Lietuvių,1
+zcrm_318358000005320001,zcrm_en_US,Luxembourgish,1
+zcrm_318358000005320003,zcrm_en_US,Malayalam,1
+zcrm_318358000005320005,zcrm_en_US,Maori,1
+zcrm_318358000005320007,zcrm_en_US,Marathi,1
+zcrm_318358000005320009,zcrm_en_US,Nederlands,1
+zcrm_318358000005320011,zcrm_en_US,Nepali,1
+zcrm_318358000005320013,zcrm_en_US,NorthernSami,1
+zcrm_318358000005320015,zcrm_en_US,NorwegianBokmål,1
+zcrm_318358000005320017,zcrm_en_US,NorwegianNynorsk,1
+zcrm_318358000005320019,zcrm_en_US,Persian,1
+zcrm_318358000005320021,zcrm_en_US,ScottishGaelic,1
+zcrm_318358000005320023,zcrm_en_US,Sindhi,1
+zcrm_318358000005320025,zcrm_en_US,Sinhalese,1
+zcrm_318358000005320027,zcrm_en_US,Slovenčina,1
+zcrm_318358000005320029,zcrm_en_US,Slovenščina,1
+zcrm_318358000005320031,zcrm_en_US,Swahili,1
+zcrm_318358000005320033,zcrm_en_US,Swati,1
+zcrm_318358000005320035,zcrm_en_US,Tagalog,1
+zcrm_318358000005320037,zcrm_en_US,Tamil,1
+zcrm_318358000005320039,zcrm_en_US,Telugu,1
+zcrm_318358000005320041,zcrm_en_US,Tibetan,1
+zcrm_318358000005320043,zcrm_en_US,TiếngViệt,1
+zcrm_318358000005320045,zcrm_en_US,Türkçe,1
+zcrm_318358000005320047,zcrm_en_US,Urdu,1
+zcrm_318358000005320049,zcrm_en_US,Uzbek,1
+zcrm_318358000005320051,zcrm_en_US,Welsh,1
+zcrm_318358000005320053,zcrm_en_US,Yoruba,1
+zcrm_318358000005320055,zcrm_en_US,català,1
+zcrm_318358000005320057,zcrm_en_US,español,1
+zcrm_318358000005320059,zcrm_en_US,français,1
+zcrm_318358000005320061,zcrm_en_US,hrvatski,1
+zcrm_318358000005320063,zcrm_en_US,italiano,1
+zcrm_318358000005320065,zcrm_en_US,magyar,1
+zcrm_318358000005320067,zcrm_en_US,polski,1
+zcrm_318358000005320069,zcrm_en_US,português,1
+zcrm_318358000005320071,zcrm_en_US,română,1
+zcrm_318358000005320073,zcrm_en_US,shqip,1
+zcrm_318358000005320075,zcrm_en_US,suomi,1
+zcrm_318358000005320077,zcrm_en_US,svenska,1
+zcrm_318358000005320079,zcrm_en_US,íslenska,1
+zcrm_318358000005320081,zcrm_en_US,čeština,1
+zcrm_318358000005320083,zcrm_en_US,Ελληνικά,1
+zcrm_318358000005320085,zcrm_en_US,Српски,1
+zcrm_318358000005320087,zcrm_en_US,беларускі,1
+zcrm_318358000005320089,zcrm_en_US,български,1
+zcrm_318358000005320091,zcrm_en_US,македонски,1
+zcrm_318358000005320093,zcrm_en_US,русский,1
+zcrm_318358000005320095,zcrm_en_US,українська,1
+zcrm_318358000005320097,zcrm_en_US,עברית,1
+zcrm_318358000005320099,zcrm_en_US,العربية,1
+zcrm_318358000005320101,zcrm_en_US,हिंदी,1
+zcrm_318358000005320103,zcrm_en_US,ไทย,1
+zcrm_318358000005320105,zcrm_en_US,中文,1
+zcrm_318358000005320107,zcrm_en_US,日本語,1
+zcrm_318358000005320109,zcrm_en_US,한국어,1
+zcrm_318358000005320202,zcrm_en_US,Backstage Portal,2
+zcrm_318358000005320204,zcrm_en_US,Your Affluence in Germany,1
+zcrm_318358000005320214,zcrm_en_US,Event Location,2
+zcrm_318358000005637020,zcrm_en_US,Social-XING,1
+zcrm_318358000005637022,zcrm_en_US,Social-LinkedIn,1
+zcrm_318358000005718005,zcrm_en_US,XING,2
+zcrm_318358000005718365,zcrm_en_US,LinkedIn,2
+zcrm_318358000005718411,zcrm_en_US,Cuddle Call,1
+zcrm_318358000005718442,zcrm_en_US,Social-XING,1
+zcrm_318358000005718444,zcrm_en_US,Referral,1
+zcrm_318358000005718446,zcrm_en_US,Online Store,1
+zcrm_318358000005718448,zcrm_en_US,Social-Twitter,1
+zcrm_318358000005718450,zcrm_en_US,Social-Facebook,1
+zcrm_318358000005718452,zcrm_en_US,Ads-Google,1
+zcrm_318358000005718454,zcrm_en_US,Web Download,1
+zcrm_318358000005718456,zcrm_en_US,Social-LinkedIn,1
+zcrm_318358000005718470,zcrm_en_US,LinkedIn,2
+zcrm_318358000005718477,zcrm_en_US,XING,2
+zcrm_318358000006099796,zcrm_en_US,Chat,1
+zcrm_318358000006099798,zcrm_en_US,Zoho Bookings,1
+zcrm_318358000006099802,zcrm_en_US,Dr.,1
+zcrm_318358000006133004,zcrm_en_US,Middle Name,2
+zcrm_318358000006313691,zcrm_en_US,Gold,1
+zcrm_318358000006313693,zcrm_en_US,Pappe,1
+zcrm_318358000006313695,zcrm_en_US,Irrelevant,1
+zcrm_318358000006313697,zcrm_en_US,Silber,1
+zcrm_318358000006523009,zcrm_en_US,Brand,2
+zcrm_318358000006523011,zcrm_en_US,Expat Wealth Group Brand,1
+zcrm_318358000006523023,zcrm_en_US,Event Type,2
+zcrm_318358000006523025,zcrm_en_US,Location Based,1
+zcrm_318358000006523027,zcrm_en_US,Online Event,1
+zcrm_318358000006523029,zcrm_en_US,Hybrid Event,1
+zcrm_318358000007643557,zcrm_en_US,Lead Created,1
+zcrm_318358000007643558,zcrm_en_US,Lead Attempted to Contact,1
+zcrm_318358000007643559,zcrm_en_US,Lead Contact in Future,1
+zcrm_318358000007643560,zcrm_en_US,Lead Contacted,1
+zcrm_318358000007643561,zcrm_en_US,Lead Junk,1
+zcrm_318358000007643562,zcrm_en_US,Lead Lost,1
+zcrm_318358000007643563,zcrm_en_US,Lead Not Contacted,1
+zcrm_318358000007643564,zcrm_en_US,Lead Pre-Qualified,1
+zcrm_318358000007643565,zcrm_en_US,Lead Not Qualified,1
+zcrm_318358000007643566,zcrm_en_US,Email Sent,1
+zcrm_318358000007643567,zcrm_en_US,Contact Created,1
+zcrm_318358000007643568,zcrm_en_US,Deal Created Existing Business,1
+zcrm_318358000007643569,zcrm_en_US,Deal Created New Business,1
+zcrm_318358000007643570,zcrm_en_US,Task Created,1
+zcrm_318358000007643571,zcrm_en_US,Task Deferred,1
+zcrm_318358000007643572,zcrm_en_US,Task in Progress,1
+zcrm_318358000007643573,zcrm_en_US,Task Completed,1
+zcrm_318358000007643574,zcrm_en_US,Task Waiting for input,1
+zcrm_318358000007643575,zcrm_en_US,Meeting Created,1
+zcrm_318358000007643576,zcrm_en_US,Call Created,1
+zcrm_318358000007643577,zcrm_en_US,Quote Draft,1
+zcrm_318358000007643578,zcrm_en_US,Quote Negotiation,1
+zcrm_318358000007643579,zcrm_en_US,Quote Delivered,1
+zcrm_318358000007643580,zcrm_en_US,Quote On Hold,1
+zcrm_318358000007643581,zcrm_en_US,Quote Confirmed,1
+zcrm_318358000007643582,zcrm_en_US,Quote Closed Won,1
+zcrm_318358000007643583,zcrm_en_US,Quote Closed Lost,1
+zcrm_318358000007643584,zcrm_en_US,Sales Order Created,1
+zcrm_318358000007643585,zcrm_en_US,Sales Order Approved,1
+zcrm_318358000007643586,zcrm_en_US,Sales Order Delivered,1
+zcrm_318358000007643587,zcrm_en_US,Sales Order Cancelled,1
+zcrm_318358000007643588,zcrm_en_US,Invoice Created,1
+zcrm_318358000007643589,zcrm_en_US,Invoice Approved,1
+zcrm_318358000007643590,zcrm_en_US,Invoice Delivered,1
+zcrm_318358000007643591,zcrm_en_US,Invoice Cancelled,1
+zcrm_318358000007643592,zcrm_en_US,Deal Closed Won,1
+zcrm_318358000007643593,zcrm_en_US,Deal Closed Lost,1
+zcrm_318358000007643594,zcrm_en_US,Deal Negotiation/Review,1
+zcrm_318358000007643595,zcrm_en_US,Deal Proposal/Price Quote,1
+zcrm_318358000007643596,zcrm_en_US,Deal Value Proposition,1
+zcrm_318358000007643597,zcrm_en_US,Deal Needs Analysis,1
+zcrm_318358000007643598,zcrm_en_US,Deal Qualification,1

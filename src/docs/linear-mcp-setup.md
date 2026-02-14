@@ -134,9 +134,13 @@ If these work, the connection is successful! ✅
 
 ## What I Can Do Once Connected
 
-Once Linear MCP is configured, I can help you:
+Once Linear MCP is configured, I will automatically:
 
-- ✅ **Create issues** from your human-todos.md checklist items
+- ✅ **Create Linear issues** whenever adding new items to human-todos.md (see `.cursor/rules/linear-task-management.mdc` — prefix convention: LDW-DEV-WEB for dev tasks on this site)
+
+And on request:
+
+- ✅ **Create issues** from existing human-todos.md checklist items
 - ✅ **Update issue status** when work is complete
 - ✅ **Link commits** to Linear issues (using issue IDs in commit messages)
 - ✅ **Search Linear docs** for feature information

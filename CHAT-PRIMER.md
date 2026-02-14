@@ -13,14 +13,18 @@ Use this for new Composer/Chat sessions and when you say "I'm back" or "I'm done
 **Process:** This repo is the leading environment. For non-trivial work (new workflows, integrations, features), confirm scope and approach with the user first; develop together. See `.cursor/rules/leading-environment.mdc`.
 
 **Key docs:**
-- `src/docs/human-todos.md` — All human to-dos (auth, deploy, feedback)
+- `src/docs/about-logan.md` — Voice, preferences, background. Read this to get the human right.
+- `src/docs/human-todos.md` — All human to-dos (auth, deploy, feedback). When adding new items, create a Linear issue and link it (see `.cursor/rules/linear-task-management.mdc`)
 - `src/docs/auth-flow/auth-flow-prd.md` — Auth plan
 - `src/docs/agent-whats-next.md` — Current focus and key docs
+- `src/docs/contact-network-roadmap.md` — Contact network phased plan (households, CRM import, dashboard, dossier)
 - `GIT-WORKFLOW.md` — PRs, commits, Linear
 
 **Branches:** `auth-flow` (auth, merge when ready). `user-feedback` (feedback modal).
 
 **Future / backlog:** Web analytics — user wants analytics for: (1) this app (Consulting & More), (2) personal site, (3) German Financial Planning project. Add when ready.
+
+**Contact network:** New feature — one source of truth for contacts (Zoho, Provisionsabrechnung). Phased plan in `src/docs/contact-network-roadmap.md`. Phase 1 checklist in `contact-network-phase1-checklist.md`. File storage layout in `src/docs/file-storage-architecture.md`. When building contact dashboard, imports, or dossier: follow the phases.
 
 ---
 

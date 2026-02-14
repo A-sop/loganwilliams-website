@@ -10,6 +10,7 @@ import {
   Cookie,
   Heart,
   Sparkles,
+  Building2,
 } from 'lucide-react';
 import { FaLinkedinIn, FaInstagram } from 'react-icons/fa';
 import { SOCIAL_LINKS } from '@/data/social-links';
@@ -131,6 +132,17 @@ export function SiteFooter() {
                 >
                   <Sparkles className={iconClass} />
                   Pirate Skills
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://startplatz-ai-hub.de"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClass}
+                >
+                  <Building2 className={iconClass} />
+                  StartPlatz AI Hub Cologne
                 </a>
               </li>
             </ul>
